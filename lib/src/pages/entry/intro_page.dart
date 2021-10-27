@@ -9,10 +9,11 @@ class SplashPage extends StatefulWidget {
 
 class _SplashPageState extends State<SplashPage> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    Timer(const Duration(seconds: 5), (){});
+    Timer(const Duration(seconds: 5), () {});
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +22,7 @@ class _SplashPageState extends State<SplashPage> {
         // ignore: prefer_const_constructors
         decoration: BoxDecoration(
           image: const DecorationImage(
-            image: AssetImage('assets/splash_background2.png'),
+            image: AssetImage('assets/splash_background3.png'),
             fit: BoxFit.fill,
           ),
         ),
@@ -36,12 +37,11 @@ class _SplashPageState extends State<SplashPage> {
               Image.asset(
                 'assets/logo.png',
                 fit: BoxFit.fill,
-                //width: 300.w,
+                width: 150,
               ),
-                Text.rich(
+              Text.rich(
                 TextSpan(
                   text: 'Meal',
-
                   style: Theme.of(context).textTheme.headline4!.copyWith(
                         fontWeight: FontWeight.bold,
                         color: mainColor,
@@ -54,17 +54,16 @@ class _SplashPageState extends State<SplashPage> {
                   ],
                 ),
               ),
-               const SizedBox(
+              const SizedBox(
                 height: 24,
               ),
-               Text(
+              Text(
                 'FOOD DELIVERY',
                 style: Theme.of(context).textTheme.bodyText1!.copyWith(
                       color: secondaryFontColor,
                       letterSpacing: 8,
                     ),
               ),
-              
             ],
           ),
           // child: Column(
@@ -76,11 +75,9 @@ class _SplashPageState extends State<SplashPage> {
           //       //fit: BoxFit.fill,
           //       //width: 300.w,
           //     ),
-             
-             
+
           //   ],
           // ),
-       
         ),
       ),
 
