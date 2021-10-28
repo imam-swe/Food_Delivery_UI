@@ -18,6 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       routes: {
         "/": (context) => const SplashPage(),
+        "/intro": (context) => const IntroPage(),
+        "/starter": (context) => const IntroPage(),
       },
       debugShowCheckedModeBanner: false,
     );
