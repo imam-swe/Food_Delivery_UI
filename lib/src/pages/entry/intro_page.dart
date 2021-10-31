@@ -36,15 +36,18 @@ class _IntroPageState extends State<IntroPage> {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    // const SizedBox(
-                    //   // height: 95,
-                    //   height: 150,
-                    // ),
-                    Image.asset(
-                      _data[index].imagePath!,
-                       width: 380,
-                       height: 380,
-                      // fit: BoxFit.fitHeight,
+                    const SizedBox(
+                      // height: 150,
+                      height: 50,
+                    ),
+                    SizedBox(
+                      width: 380,
+                      height: 380,
+                      child: Image.asset(
+                        _data[index].imagePath!,
+
+                        // fit: BoxFit.fitHeight,
+                      ),
                     ),
                   ],
                 );
@@ -78,48 +81,45 @@ class _IntroPageState extends State<IntroPage> {
             ),
           ),
           SizedBox(
-            // height: 150,
+            //height: 150,
             child: Text(
               _data[_activeIndex].desc!,
               style: Theme.of(context).textTheme.caption!.copyWith(
-                    color: secondaryFontColor,
-                    fontWeight: FontWeight.bold,
-                    // height: 4
-                  ),
+                  color: secondaryFontColor,
+                  fontWeight: FontWeight.bold,
+                  height: 2),
               textAlign: TextAlign.center,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 60, vertical: 60),
-            child: Row(
-              children: [
-                Expanded(
-                  child: ElevatedButton(
-                    onPressed: () {
-                      print((_activeIndex+1) >= _data.length);
-                      if((_activeIndex + 1) >= _data.length) return;
-                      _controller.animateToPage(
-                        _activeIndex + 1,
-                        duration: const Duration(milliseconds: 250),
-                        curve: Curves.linear,
-                      );
-                    },
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<OutlinedBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                      ),
-                      backgroundColor:
-                          MaterialStateProperty.all<Color>(mainColor),
-                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                        const EdgeInsets.all(16),
-                      ),
-                    ),
-                    child: const Text('Next'),
-                  ),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 60,
+              vertical: 60,
+            ),
+            child: ElevatedButton(
+              onPressed: () {
+                if ((_activeIndex + 1) >= _data.length) {
+                  Navigator.pushReplacementNamed(context, '/starter');
+                  return;
+                }
+                _controller.animateToPage(
+                  _activeIndex + 1,
+                  duration: const Duration(milliseconds: 250),
+                  curve: Curves.easeIn,
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                primary: mainColor,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50),
                 ),
-              ],
+                side: const BorderSide(
+                  color: mainColor,
+                ),
+                minimumSize: const Size(double.infinity, 50),
+                padding: const EdgeInsets.all(16),
+              ),
+              child: const Text('Next'),
             ),
           ),
         ],
