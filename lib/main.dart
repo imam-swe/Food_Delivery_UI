@@ -1,3 +1,4 @@
+import 'package:ecommerce_meal_monkey/constants.dart';
 import 'package:ecommerce_meal_monkey/src/pages/pages.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 import 'package:flutter/material.dart';
@@ -31,9 +32,9 @@ class MyApp extends StatelessWidget {
           ),
         ),
         routes: {
-          "/": (context) => const SplashPage(),
-          "/intro": (context) => const IntroPage(),
-          "/starter": (context) => const StarterPage(),
+          kRouteRoot: (context) => const SplashPage(),
+          kRouteIntro: (context) => const IntroPage(),
+          kRouteStarter: (context) => const StarterPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

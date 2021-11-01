@@ -36,13 +36,13 @@ class _IntroPageState extends State<IntroPage> {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                    const SizedBox(
-                      // height: 150,
-                      height: 50,
+                     SizedBox(
+                       height: 150.h,
+                      //height: 50,
                     ),
                     SizedBox(
-                      width: 380,
-                      height: 380,
+                      width: 1100.w,
+                      height: 1100.h,
                       child: Image.asset(
                         _data[index].imagePath!,
 
@@ -68,12 +68,12 @@ class _IntroPageState extends State<IntroPage> {
               size: 32,
             ),
           ),
-          const SizedBox(
-            height: 20,
-            //height: 100,
+          SizedBox(
+            //height: 20,
+            height: 100.h,
           ),
           SizedBox(
-            // height: 150,
+            height: 150.h,
             child: Text(
               _data[_activeIndex].title!,
               style: Theme.of(context).textTheme.headline4!.copyWith(
@@ -81,25 +81,26 @@ class _IntroPageState extends State<IntroPage> {
             ),
           ),
           SizedBox(
-            //height: 150,
+            height: 150.h,
             child: Text(
               _data[_activeIndex].desc!,
               style: Theme.of(context).textTheme.caption!.copyWith(
-                  color: secondaryFontColor,
-                  fontWeight: FontWeight.bold,
-                  height: 2),
+                    color: secondaryFontColor,
+                    fontWeight: FontWeight.bold,
+                    height: 4.h,
+                  ),
               textAlign: TextAlign.center,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 60,
-              vertical: 60,
+            padding: EdgeInsets.symmetric(
+              horizontal: 60.w,
+              vertical: 120.h,
             ),
             child: ElevatedButton(
               onPressed: () {
                 if ((_activeIndex + 1) >= _data.length) {
-                  Navigator.pushReplacementNamed(context, '/starter');
+                  Navigator.pushReplacementNamed(context, kRouteStarter);
                   return;
                 }
                 _controller.animateToPage(
@@ -116,8 +117,8 @@ class _IntroPageState extends State<IntroPage> {
                 side: const BorderSide(
                   color: mainColor,
                 ),
-                minimumSize: const Size(double.infinity, 50),
                 padding: const EdgeInsets.all(16),
+                minimumSize: const Size(double.infinity, 50),
               ),
               child: const Text('Next'),
             ),

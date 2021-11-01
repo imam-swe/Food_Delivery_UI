@@ -16,7 +16,7 @@ class SplashLogo extends StatelessWidget {
           Image.asset(
             'assets/logo.png',
             fit: BoxFit.fill,
-            width: 150,
+            width: 300.w,
           ),
           Text.rich(
             TextSpan(
@@ -33,14 +33,14 @@ class SplashLogo extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 24,
+          SizedBox(
+            height: 24.h,
           ),
           Text(
             'FOOD DELIVERY',
             style: Theme.of(context).textTheme.bodyText1!.copyWith(
                   color: secondaryFontColor,
-                  letterSpacing: 8,
+                  letterSpacing: 3,
                 ),
           ),
         ],
