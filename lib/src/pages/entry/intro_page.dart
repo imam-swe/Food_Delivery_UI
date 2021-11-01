@@ -36,9 +36,8 @@ class _IntroPageState extends State<IntroPage> {
               itemBuilder: (context, index) {
                 return Column(
                   children: [
-                     SizedBox(
-                       height: 150.h,
-                      //height: 50,
+                    SizedBox(
+                      height: 150.h,
                     ),
                     SizedBox(
                       width: 1100.w,
@@ -57,19 +56,18 @@ class _IntroPageState extends State<IntroPage> {
           SliderIndicator(
             length: _data.length,
             activeIndex: _activeIndex,
-            indicator: const Icon(
+            indicator: Icon(
               Icons.fiber_manual_record_rounded,
               color: placeholderColor,
-              size: 32,
+              size: 32.w,
             ),
-            activeIndicator: const Icon(
+            activeIndicator: Icon(
               Icons.fiber_manual_record_rounded,
               color: mainColor,
-              size: 32,
+              size: 32.w,
             ),
           ),
           SizedBox(
-            //height: 20,
             height: 100.h,
           ),
           SizedBox(
