@@ -19,15 +19,29 @@ class MyApp extends StatelessWidget {
       builder: () => MaterialApp(
         title: 'Meal Monkey Demo',
         theme: ThemeData(
+          scaffoldBackgroundColor: Colors.white,
           primarySwatch: mainColorSwatch,
           elevatedButtonTheme: ElevatedButtonThemeData(
             style: ElevatedButton.styleFrom(
-              primary: mainColor,
+              //primary: mainColor,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),
               padding: const EdgeInsets.all(16),
               minimumSize: const Size(double.infinity, 50),
+            ),
+          ),
+          outlinedButtonTheme: OutlinedButtonThemeData(
+            style: ElevatedButton.styleFrom(
+              // primary: mainColor,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50),
+              ),
+              side: const BorderSide(
+                color: mainColor,
+              ),
+              minimumSize: const Size(double.infinity, 50),
+              padding: const EdgeInsets.all(16),
             ),
           ),
         ),

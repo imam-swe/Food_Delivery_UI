@@ -16,7 +16,7 @@ class SplashLogo extends StatelessWidget {
           Image.asset(
             'assets/logo.png',
             fit: BoxFit.fill,
-            width: 300.w,
+            width: 250.w,
           ),
           Text.rich(
             TextSpan(

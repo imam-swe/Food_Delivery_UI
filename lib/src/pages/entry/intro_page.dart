@@ -7,87 +7,113 @@ class IntroPage extends StatefulWidget {
   State<IntroPage> createState() => _IntroPageState();
 }
 
-class _IntroPageState extends State<IntroPage> {
-  late PageController _controller;
+class _IntroPageState extends State<IntroPage>
+    with SingleTickerProviderStateMixin {
+  late PageController _pageController;
+  late AnimationController _animationController;
+  late Animation<double> _positionedAnimation;
+
   final List<IntroModel> _data = IntroModel.data;
   int _activeIndex = 0;
 
   @override
   void initState() {
     super.initState();
-    _controller = PageController();
-    _controller.addListener(() {
-      setState(() {
-        _activeIndex = _controller.page!.round();
-      });
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 250),
+    );
+    _positionedAnimation = Tween<double>(begin: -50.h, end: 0.h).animate(
+      CurvedAnimation(
+        parent: _animationController,
+        curve: Curves.easeInOut,
+      )..addListener(() {
+          setState(() {});
+        }),
+    );
+
+    _pageController = PageController(); 
+    _pageController.addListener(() {
+      if (_activeIndex != _pageController.page!.round()) {
+        _animationController.reset();
+        _animationController.forward();
+        _activeIndex = _pageController.page!.round();
+        setState(() {
+          
+        });
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      body: Column(
+      body: Stack(
+        alignment: Alignment.bottomCenter,
         children: [
-          Expanded(
-            child: PageView.builder(
-              controller: _controller,
-              itemCount: _data.length,
-              itemBuilder: (context, index) {
-                return Column(
-                  children: [
-                    SizedBox(
-                      height: 150.h,
-                    ),
-                    SizedBox(
-                      width: 1100.w,
-                      height: 1100.h,
-                      child: Image.asset(
-                        _data[index].imagePath!,
+          PageView.builder(
+            controller: _pageController,
+            itemCount: _data.length,
+            itemBuilder: (context, index) {
+              return Column(
+                children: [
+                  SizedBox(
+                    height: 150.h,
+                  ),
+                  SizedBox(
+                    // width: 1100.w,
+                    height: 1000.h,
+                    child: Image.asset(
+                      _data[index].imagePath!,
 
-                        // fit: BoxFit.fitHeight,
-                      ),
+                      // fit: BoxFit.fitHeight,
                     ),
-                  ],
-                );
-              },
+                  ),
+                ],
+              );
+            },
+          ),
+          Padding(
+            padding: EdgeInsets.only(bottom: 900.h),
+            child: SliderIndicator(
+              length: _data.length,
+              activeIndex: _activeIndex,
+              indicator: Icon(
+                Icons.fiber_manual_record_rounded,
+                color: placeholderColor,
+                size: 32.w,
+              ),
+              activeIndicator: Icon(
+                Icons.fiber_manual_record_rounded,
+                color: mainColor,
+                size: 32.w,
+              ),
             ),
           ),
-          SliderIndicator(
-            length: _data.length,
-            activeIndex: _activeIndex,
-            indicator: Icon(
-              Icons.fiber_manual_record_rounded,
-              color: placeholderColor,
-              size: 32.w,
+          Padding(
+            padding: EdgeInsets.only(
+              bottom: 700.h + _positionedAnimation.value,
             ),
-            activeIndicator: Icon(
-              Icons.fiber_manual_record_rounded,
-              color: mainColor,
-              size: 32.w,
-            ),
-          ),
-          SizedBox(
-            height: 100.h,
-          ),
-          SizedBox(
-            height: 150.h,
             child: Text(
               _data[_activeIndex].title!,
               style: Theme.of(context).textTheme.headline4!.copyWith(
-                  color: primaryFontColor, fontWeight: FontWeight.bold),
+                    color: primaryFontColor,
+                    fontWeight: FontWeight.bold,
+                  ),
             ),
           ),
-          SizedBox(
-            height: 150.h,
-            child: Text(
-              _data[_activeIndex].desc!,
-              style: Theme.of(context).textTheme.caption!.copyWith(
-                    color: secondaryFontColor,
-                    fontWeight: FontWeight.bold,
-                    height: 4.h,
-                  ),
-              textAlign: TextAlign.center,
+          Padding(
+            padding: EdgeInsets.only(bottom: 400.h),
+            child: SizedBox(
+              height: 200.h,
+              child: Text(
+                _data[_activeIndex].desc!,
+                style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      color: secondaryFontColor,
+                      height: 4.h,
+                    ),
+                textAlign: TextAlign.center,
+              ),
             ),
           ),
           Padding(
@@ -101,7 +127,7 @@ class _IntroPageState extends State<IntroPage> {
                   Navigator.pushReplacementNamed(context, kRouteStarter);
                   return;
                 }
-                _controller.animateToPage(
+                _pageController.animateToPage(
                   _activeIndex + 1,
                   duration: const Duration(milliseconds: 250),
                   curve: Curves.easeIn,

@@ -6,7 +6,6 @@ class StarterPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Stack(
         fit: StackFit.expand,
         children: [
@@ -39,22 +38,11 @@ class StarterPage extends StatelessWidget {
                 ),
                 OutlinedButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(
-                    // primary: mainColor,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    side: const BorderSide(
-                      color: mainColor,
-                    ),
-                    minimumSize: const Size(double.infinity, 50),
-                    padding: const EdgeInsets.all(16),
-                  ),
                   child: const Text(
                     'Create an Account',
-                    style: TextStyle(
-                      color: mainColor,
-                    ),
+                    // style: TextStyle(
+                    //   color: mainColor,
+                    // ),
                   ),
                 ),
               ],
