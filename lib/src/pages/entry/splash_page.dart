@@ -19,7 +19,22 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/splash_background1.png',
+            // 'assets/splash101.jpg',
+            fit: BoxFit.fill,
+          ),
+          const SplashLogo(),
+        ],
+      ),
+    );
+  }
+}
+
+    
       // body: Container(
       //   // ignore: prefer_const_constructors
       //   decoration: BoxDecoration(
@@ -30,16 +45,3 @@ class _SplashPageState extends State<SplashPage> {
       //   ),
       // ),
 
-      body: Stack(
-        fit: StackFit.expand,
-        children: [
-          Image.asset(
-            'assets/splash_background1.png',
-            fit: BoxFit.fill,
-          ),
-          const SplashLogo(),
-        ],
-      ),
-    );
-  }
-}
