@@ -39,7 +39,9 @@ class StarterPage extends StatelessWidget {
                   height: 75.h,
                 ),
                 OutlinedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, kRouteRegister);
+                  },
                   child: const Text(
                     'Create an Account',
                     // style: TextStyle(

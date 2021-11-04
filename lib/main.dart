@@ -63,6 +63,7 @@ class MyApp extends StatelessWidget {
           kRouteIntro: (context) => const IntroPage(),
           kRouteStarter: (context) => const StarterPage(),
           kRouteLogin: (context) => LoginPage(),
+          kRouteRegister: (context) => RegisterPage(),
         },
         debugShowCheckedModeBanner: false,
       ),
