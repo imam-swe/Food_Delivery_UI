@@ -23,8 +23,8 @@ class _SplashPageState extends State<SplashPage> {
         fit: StackFit.expand,
         children: [
           Image.asset(
-            // 'assets/splash_background1.png',
-            'assets/splash101.jpg',
+            'assets/splash_background1.png',
+            // 'assets/splash101.jpg',
             fit: BoxFit.fill,
           ),
           const SplashLogo(),

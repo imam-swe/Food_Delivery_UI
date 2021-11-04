@@ -10,7 +10,10 @@ import 'package:ecommerce_meal_monkey/styles/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_indicator/flutter_slider_indicator.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 part 'entry/splash_page.dart';
 part 'entry/intro_page.dart';
 part 'entry/starter_page.dart';
+part 'entry/login_page.dart';
