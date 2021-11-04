@@ -30,7 +30,9 @@ class StarterPage extends StatelessWidget {
                   height: 125.h,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, kRouteLogin);
+                  },
                   child: const Text('Login'),
                 ),
                 SizedBox(

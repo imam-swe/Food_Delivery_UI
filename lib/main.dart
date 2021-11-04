@@ -44,11 +44,25 @@ class MyApp extends StatelessWidget {
               padding: const EdgeInsets.all(16),
             ),
           ),
+          inputDecorationTheme: InputDecorationTheme(
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(50),
+              borderSide: BorderSide.none,
+            ),
+            floatingLabelStyle: const TextStyle(
+              color: secondaryFontColor,
+            ),
+            contentPadding: const EdgeInsets.symmetric(
+              vertical: 4,
+              horizontal: 28,
+            ),
+          ),
         ),
         routes: {
           kRouteRoot: (context) => const SplashPage(),
           kRouteIntro: (context) => const IntroPage(),
           kRouteStarter: (context) => const StarterPage(),
+          kRouteLogin: (context) => const LoginPage(),
         },
         debugShowCheckedModeBanner: false,
       ),
