@@ -12,9 +12,7 @@ class StarterPage extends StatelessWidget {
           const StarterPainter(),
           const SplashLogo(),
           Padding(
-            padding: EdgeInsets.all(
-              60.w,
-            ),
+            padding: EdgeInsets.all(kPadding),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
@@ -26,27 +24,20 @@ class StarterPage extends StatelessWidget {
                       ),
                   textAlign: TextAlign.center,
                 ),
-                SizedBox(
-                  height: 125.h,
-                ),
+                SizedBox(height: kVerticalPadding * 2),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, kRouteLogin);
                   },
                   child: const Text('Login'),
                 ),
-                SizedBox(
-                  height: 75.h,
-                ),
+                SizedBox(height: kVerticalPadding),
                 OutlinedButton(
                   onPressed: () {
                     Navigator.pushReplacementNamed(context, kRouteRegister);
                   },
                   child: const Text(
                     'Create an Account',
-                    // style: TextStyle(
-                    //   color: mainColor,
-                    // ),
                   ),
                 ),
               ],

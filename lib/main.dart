@@ -27,8 +27,8 @@ class MyApp extends StatelessWidget {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(50),
               ),
-              padding: const EdgeInsets.all(16),
-              minimumSize: const Size(double.infinity, 50),
+              padding: EdgeInsets.all(kButtonPadding),
+              minimumSize: Size(double.infinity, kButtonPadding),
             ),
           ),
           outlinedButtonTheme: OutlinedButtonThemeData(
@@ -40,21 +40,24 @@ class MyApp extends StatelessWidget {
               side: const BorderSide(
                 color: mainColor,
               ),
-              minimumSize: const Size(double.infinity, 50),
-              padding: const EdgeInsets.all(16),
+              minimumSize: Size(double.infinity, kButtonPadding),
+              padding: EdgeInsets.all(kButtonPadding),
             ),
           ),
           inputDecorationTheme: InputDecorationTheme(
+            fillColor: placeholderColor,
+            filled: true,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(50),
               borderSide: BorderSide.none,
             ),
-            floatingLabelStyle: const TextStyle(
+            floatingLabelStyle: TextStyle(
               color: secondaryFontColor,
+              height: 10.h,
             ),
-            contentPadding: const EdgeInsets.symmetric(
-              vertical: 4,
-              horizontal: 28,
+            contentPadding: EdgeInsets.symmetric(
+              vertical: kTextFieldPadding,
+              horizontal: kTextFieldPadding * 2,
             ),
           ),
         ),
@@ -62,8 +65,8 @@ class MyApp extends StatelessWidget {
           kRouteRoot: (context) => const SplashPage(),
           kRouteIntro: (context) => const IntroPage(),
           kRouteStarter: (context) => const StarterPage(),
-          kRouteLogin: (context) => LoginPage(),
-          kRouteRegister: (context) => RegisterPage(),
+          kRouteLogin: (context) => const LoginPage(),
+          kRouteRegister: (context) => const RegisterPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

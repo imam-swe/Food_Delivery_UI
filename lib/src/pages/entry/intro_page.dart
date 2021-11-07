@@ -32,15 +32,13 @@ class _IntroPageState extends State<IntroPage>
         }),
     );
 
-    _pageController = PageController(); 
+    _pageController = PageController();
     _pageController.addListener(() {
       if (_activeIndex != _pageController.page!.round()) {
         _animationController.reset();
         _animationController.forward();
         _activeIndex = _pageController.page!.round();
-        setState(() {
-          
-        });
+        setState(() {});
       }
     });
   }
@@ -81,12 +79,12 @@ class _IntroPageState extends State<IntroPage>
               indicator: Icon(
                 Icons.fiber_manual_record_rounded,
                 color: placeholderColor,
-                size: 32.w,
+                size: 32.r,
               ),
               activeIndicator: Icon(
                 Icons.fiber_manual_record_rounded,
                 color: mainColor,
-                size: 32.w,
+                size: 32.r,
               ),
             ),
           ),
@@ -118,8 +116,8 @@ class _IntroPageState extends State<IntroPage>
           ),
           Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: 60.w,
-              vertical: 120.h,
+              horizontal: kHorizontalPadding,
+              vertical: kVerticalPadding * 2,
             ),
             child: ElevatedButton(
               onPressed: () {
