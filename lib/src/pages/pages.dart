@@ -16,3 +16,6 @@ part 'entry/intro_page.dart';
 part 'entry/starter_page.dart';
 part 'entry/login_page.dart';
 part 'entry/register_page.dart';
+part 'reset_password/enter_email.dart';
+part 'reset_password/enter_otp.dart';
+part 'reset_password/new_password.dart';

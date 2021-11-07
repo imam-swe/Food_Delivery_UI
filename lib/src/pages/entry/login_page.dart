@@ -39,11 +39,20 @@ class LoginPage extends StatelessWidget {
                 child: const Text("Login"),
               ),
               SizedBox(height: kVerticalPadding),
-              Text(
-                "Forgot your password?",
-                style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: primaryFontColor,
+              GestureDetector(
+                onTap: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const EnterEmailPage(),
                     ),
+                  );
+                },
+                child: Text(
+                  "Forgot your password?",
+                  style: Theme.of(context).textTheme.subtitle1!.copyWith(
+                        color: primaryFontColor,
+                      ),
+                ),
               ),
               SizedBox(height: kVerticalPadding * 2),
               Text(
@@ -78,9 +87,7 @@ class LoginPage extends StatelessWidget {
                 actionText: ' Sign Up',
                 actionRoute: kRouteRegister,
               ),
-              SizedBox(
-                height: kVerticalPadding,
-              )
+              SizedBox(height: kVerticalPadding),
             ],
           ),
         ),
