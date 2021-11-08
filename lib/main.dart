@@ -1,3 +1,4 @@
+
 import 'package:ecommerce_meal_monkey/constants.dart';
 import 'package:ecommerce_meal_monkey/src/pages/pages.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
@@ -67,6 +68,9 @@ class MyApp extends StatelessWidget {
           kRouteStarter: (context) => const StarterPage(),
           kRouteLogin: (context) => const LoginPage(),
           kRouteRegister: (context) => const RegisterPage(),
+
+          //checkout
+          kRouteThank: (context) => const ThankPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

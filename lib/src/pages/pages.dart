@@ -11,6 +11,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_slider_indicator/flutter_slider_indicator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+
 part 'entry/splash_page.dart';
 part 'entry/intro_page.dart';
 part 'entry/starter_page.dart';
@@ -19,3 +20,7 @@ part 'entry/register_page.dart';
 part 'reset_password/enter_email.dart';
 part 'reset_password/enter_otp.dart';
 part 'reset_password/new_password.dart';
+
+
+//checkout
+part 'checkouts/thank_you_page.dart';

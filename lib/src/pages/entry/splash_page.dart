@@ -25,6 +25,7 @@ class _SplashPageState extends State<SplashPage> {
           Image.asset(
             'assets/splash_background1.png',
             // 'assets/splash101.jpg',
+            // 'assets/splashbg1.jpg',
             fit: BoxFit.fill,
           ),
           const SplashLogo(),

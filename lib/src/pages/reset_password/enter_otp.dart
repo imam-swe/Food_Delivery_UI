@@ -36,15 +36,23 @@ class _EnterOtpPageState extends State<EnterOtpPage> {
             ),
             Row(
               children: [
-                _buildOTPValue(focusNode1, onChanged: (val){
-                  if(val.isNotEmpty) focusNode2.requestFocus();
+                _buildOTPValue(focusNode1, onChanged: (val) {
+                  if (val.isNotEmpty) focusNode2.requestFocus();
                 }),
                 SizedBox(width: kHorizontalPadding),
-                _buildOTPValue(focusNode2),
+                _buildOTPValue(focusNode2, onChanged: (val) {
+                  if (val.isNotEmpty) focusNode3.requestFocus();
+                  if (val.isEmpty) focusNode1.requestFocus();
+                }),
                 SizedBox(width: kHorizontalPadding),
-                _buildOTPValue(focusNode3),
+                _buildOTPValue(focusNode3, onChanged: (val) {
+                  if (val.isNotEmpty) focusNode4.requestFocus();
+                  if (val.isEmpty) focusNode2.requestFocus();
+                }),
                 SizedBox(width: kHorizontalPadding),
-                _buildOTPValue(focusNode4),
+                _buildOTPValue(focusNode4, onChanged: (val) {
+                  if (val.isEmpty) focusNode3.requestFocus();
+                }),
               ],
             ),
             SizedBox(height: kVerticalPadding),

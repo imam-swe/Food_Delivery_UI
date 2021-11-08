@@ -35,7 +35,10 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(height: kVerticalPadding),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  //checkout
+                  Navigator.pushReplacementNamed(context, kRouteThank);
+                },
                 child: const Text("Login"),
               ),
               SizedBox(height: kVerticalPadding),
