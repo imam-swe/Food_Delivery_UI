@@ -3,12 +3,12 @@ part of widgets;
 class LoginRegisterFooter extends StatelessWidget {
   final String question;
   final String actionText;
-  final String actionRoute;
+  final GestureTapCallback action;
 
   const LoginRegisterFooter(
       {required this.question,
       required this.actionText,
-      required this.actionRoute,
+      required this.action,
       Key? key})
       : super(key: key);
 
@@ -21,17 +21,14 @@ class LoginRegisterFooter extends StatelessWidget {
               color: primaryFontColor,
             ),
         children: [
-          TextSpan(
-            text: actionText,
-            style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.bold,
-            ),
-            recognizer: TapGestureRecognizer()
-              ..onTap = () {
-                Navigator.pushReplacementNamed(context, actionRoute);
-              },
-          ),
+           TextSpan(
+                    text: actionText,
+                    style: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                    recognizer: TapGestureRecognizer()..onTap = action,
+                  ),
         ],
       ),
     );

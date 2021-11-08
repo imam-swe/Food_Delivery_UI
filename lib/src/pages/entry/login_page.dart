@@ -82,10 +82,12 @@ class LoginPage extends StatelessWidget {
                 ),
               ),
               const Expanded(child: SizedBox.shrink()),
-              const LoginRegisterFooter(
+              LoginRegisterFooter(
                 question: 'Don\'t have an Account?',
                 actionText: ' Sign Up',
-                actionRoute: kRouteRegister,
+                action: (){
+                  Navigator.pushReplacementNamed(context, kRouteRegister);
+                },
               ),
               SizedBox(height: kVerticalPadding),
             ],

@@ -19,9 +19,10 @@ class EnterEmailPage extends StatelessWidget {
         child: Column(
           children: [
             const LoginRegistrationHeader(
+              centerText: true,
               title: "Reset Password",
               subTitle:
-                  "Please enter your email to receive a\nlink to create new password via email",
+                  "Please enter your email to receive a link\nto create new password via email",
             ),
             TextFormField(
               style: const TextStyle(color: primaryFontColor),

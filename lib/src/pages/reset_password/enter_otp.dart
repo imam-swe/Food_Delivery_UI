@@ -1,7 +1,17 @@
 part of pages;
 
-class EnterOtpPage extends StatelessWidget {
+class EnterOtpPage extends StatefulWidget {
   const EnterOtpPage({Key? key}) : super(key: key);
+
+  @override
+  State<EnterOtpPage> createState() => _EnterOtpPageState();
+}
+
+class _EnterOtpPageState extends State<EnterOtpPage> {
+  FocusNode focusNode1 = FocusNode();
+  FocusNode focusNode2 = FocusNode();
+  FocusNode focusNode3 = FocusNode();
+  FocusNode focusNode4 = FocusNode();
 
   @override
   Widget build(BuildContext context) {
@@ -19,45 +29,67 @@ class EnterOtpPage extends StatelessWidget {
         child: Column(
           children: [
             const LoginRegistrationHeader(
-              title: "We Have sent an OTP to your email",
+              centerText: true,
+              title: "We have sent an OTP\nto your email",
               subTitle:
                   "Please Check your email sample@gmail.com\ncontinue to reset your password",
             ),
-            TextFormField(
-              style: const TextStyle(color: primaryFontColor),
-              keyboardType: TextInputType.emailAddress,
-              decoration: const InputDecoration(
-                labelText: 'Your..',
-                isCollapsed: true,
-              ),
+            Row(
+              children: [
+                _buildOTPValue(focusNode1, onChanged: (val){
+                  if(val.isNotEmpty) focusNode2.requestFocus();
+                }),
+                SizedBox(width: kHorizontalPadding),
+                _buildOTPValue(focusNode2),
+                SizedBox(width: kHorizontalPadding),
+                _buildOTPValue(focusNode3),
+                SizedBox(width: kHorizontalPadding),
+                _buildOTPValue(focusNode4),
+              ],
             ),
             SizedBox(height: kVerticalPadding),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.of(context).pushReplacement(
+                  MaterialPageRoute(
+                    builder: (context) => const NewPasswordPage(),
+                  ),
+                );
+              },
               child: const Text("Next"),
             ),
-            Text.rich(
-              TextSpan(
-                text: 'Don\'t Received',
-                style: Theme.of(context).textTheme.subtitle1!.copyWith(
-                      color: primaryFontColor,
-                    ),
-                children: [
-                  TextSpan(
-                    text: "Click Here",
-                    style: TextStyle(
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.bold,
-                    ),
-                    // recognizer: TapGestureRecognizer()
-                    //   ..onTap = () {
-                    //     Navigator.pushReplacementNamed(context, actionRoute);
-                    //   },
-                  ),
-                ],
-              ),
-            )
+            SizedBox(height: kVerticalPadding),
+            LoginRegisterFooter(
+              question: 'Didn\'t receive?',
+              actionText: ' Click Here',
+              action: () {},
+            ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Expanded _buildOTPValue(
+    FocusNode focusNode, {
+    ValueChanged<String>? onChanged,
+  }) {
+    return Expanded(
+      child: TextFormField(
+        focusNode: focusNode,
+        textAlign: TextAlign.center,
+        obscureText: true,
+        obscuringCharacter: "*",
+        style: const TextStyle(
+          fontSize: 32,
+          color: primaryFontColor,
+        ),
+        onChanged: onChanged,
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide.none,
+          ),
         ),
       ),
     );

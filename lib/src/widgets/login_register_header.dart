@@ -3,11 +3,12 @@ part of widgets;
 class LoginRegistrationHeader extends StatelessWidget {
   final String title;
   final String subTitle;
+  final bool centerText;
 
   const LoginRegistrationHeader(
-      {required this.title, required this.subTitle, Key? key})
+      {required this.title, required this.subTitle, this.centerText = false, Key? key})
       : super(key: key);
-
+  
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -18,6 +19,7 @@ class LoginRegistrationHeader extends StatelessWidget {
           style: Theme.of(context).textTheme.headline4!.copyWith(
                 color: primaryFontColor,
               ),
+              textAlign: centerText? TextAlign.center : null,
         ),
         SizedBox(height: kVerticalPadding / 2),
         Text(
@@ -25,6 +27,7 @@ class LoginRegistrationHeader extends StatelessWidget {
           style: Theme.of(context).textTheme.subtitle1!.copyWith(
                 color: primaryFontColor,
               ),
+              textAlign: centerText? TextAlign.center : null,
         ),
         SizedBox(height: kVerticalPadding * 3),
       ],

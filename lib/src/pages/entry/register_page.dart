@@ -74,10 +74,12 @@ class RegisterPage extends StatelessWidget {
               ),
               //SizedBox(height: kLoginRegisterSpacing),
               const Expanded(child: SizedBox.shrink()),
-              const LoginRegisterFooter(
+              LoginRegisterFooter(
                 question: 'Already have an Account?',
                 actionText: ' Login',
-                actionRoute: kRouteLogin,
+                action: (){
+                  Navigator.pushReplacementNamed(context, kRouteLogin);
+                },
               ),
               SizedBox(height: kVerticalPadding)
             ],
