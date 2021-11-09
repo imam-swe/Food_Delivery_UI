@@ -65,41 +65,59 @@ class _ChangeAddressPageState extends State<ChangeAddressPage> {
                         EdgeInsets.symmetric(horizontal: kHorizontalPadding),
                     child: Column(
                       children: [
-                        TextFormField(
-                        
-                          style: const TextStyle(color: primaryFontColor),
+                        const TextField(
+                          //style: TextStyle(color: primaryFontColor),
                           keyboardType: TextInputType.emailAddress,
-                          decoration: const InputDecoration(
-                            labelText: 'Search Address',
-                             icon: Icon(Icons.search),
+                          decoration: InputDecoration(
+                            contentPadding: EdgeInsets.only(top: 20),
+                            isDense: true,
+                            hintText: 'Search Address',
+                            hintStyle: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                            ),
+                            prefixIcon: Icon(
+                              Icons.search,
+                              size: 22,
+                            ),
+                            //icon: Icon(Icons.search),
                             //isCollapsed: true,
                           ),
                         ),
+                        SizedBox(height: kVerticalPadding),
                         Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             Expanded(
                               flex: 1,
-                              child: Icon(
-                                Icons.bookmark,
-                                color: mainColor,
+                              child: CircleAvatar(
+                                backgroundColor: Color(0xfffecfb8),
+                                child: Icon(
+                                  Icons.star_rounded,
+                                  color: mainColor,
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 10),
+                            Expanded(
+                              flex: 6,
+                              child: Text(
+                                "Choose a saved place",
+                                style: TextStyle(
+                                    fontSize: 18, fontWeight: FontWeight.bold),
                               ),
                             ),
                             Expanded(
                               flex: 2,
-                              child: Text("Choose a save place"),
-                            ),
-                            Expanded(
-                              flex: 2,
-                              child: Icon(
-                                Icons.bookmark,
-                                color: mainColor,
+                              child: SizedBox(
+                                width: 2,
                               ),
                             ),
                             Expanded(
                               flex: 1,
                               child: Icon(
-                                Icons.forward,
-                                color: mainColor,
+                                Icons.arrow_forward_ios,
+                                //color: mainColor,
                               ),
                             ),
                           ],

@@ -176,47 +176,43 @@ class _CheckoutPageState extends State<CheckoutPage> {
                       const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                   child: Column(
                     children: [
-                      Column(
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  "Payment method",
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .bodyText2!
-                                      .copyWith(
-                                        color: secondaryFontColor,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 20,
-                                      ),
-                                ),
-                              ),
-                              FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: GestureDetector(
-                                  onTap: () {
-                                    _showModalBottomSheet(
-                                        size.height * .8, context);
-                                  },
-                                  child: const Text(
-                                    '+ Add Card',
-                                    style: TextStyle(
-                                      color: mainColor,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 18,
-                                    ),
+                          FittedBox(
+                            fit: BoxFit.fitWidth,
+                            child: Text(
+                              "Payment method",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodyText2!
+                                  .copyWith(
+                                    color: secondaryFontColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20,
                                   ),
+                            ),
+                          ),
+                          FittedBox(
+                            fit: BoxFit.fitWidth,
+                            child: GestureDetector(
+                              onTap: () {
+                                _showModalBottomSheet(
+                                    size.height * .8, context);
+                              },
+                              child: const Text(
+                                '+ Add Card',
+                                style: TextStyle(
+                                  color: mainColor,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 18,
                                 ),
                               ),
-                            ],
+                            ),
                           ),
-                          Container(),
                         ],
                       ),
+                      //Container(),
                       Expanded(
                         flex: 1,
                         child: Column(
@@ -234,20 +230,125 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              const FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Text(
+                                  "Cash on delivery",
+                                  style: TextStyle(
+                                    //color: mainColor,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _value = !_value;
+                                  });
+                                },
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.orange,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: _value
+                                        ? const Icon(
+                                            Icons.check,
+                                            size: 8.0,
+                                            color: Colors.white,
+                                          )
+                                        : const Icon(
+                                            Icons.check_box_outline_blank,
+                                            size: 8.0,
+                                            color: Colors.white,
+                                          ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
                               SizedBox(
                                 height: 90.h,
                                 width: 150.w,
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/visa.png",
+                                      fit: BoxFit.fill,
+                                    ),
+                                    const Text(
+                                      "**** **** **** 3241",
+                                      style: TextStyle(
+                                        color: mainColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              // const FittedBox(
+                              //   fit: BoxFit.fitWidth,
+                              //   child: Text(
+                              //     "**** **** **** 3241",
+                              //     style: TextStyle(
+                              //       color: mainColor,
+                              //       fontWeight: FontWeight.bold,
+                              //       fontSize: 18,
+                              //     ),
+                              //   ),
+                              // ),
+                              InkWell(
+                                onTap: () {
+                                  setState(() {
+                                    _value = !_value;
+                                  });
+                                },
+                                child: Container(
+                                  decoration: const BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.orange,
+                                  ),
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: _value
+                                        ? const Icon(
+                                            Icons.check,
+                                            size: 8.0,
+                                            color: Colors.white,
+                                          )
+                                        : const Icon(
+                                            Icons.check_box_outline_blank,
+                                            size: 8.0,
+                                            color: Colors.white,
+                                          ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              SizedBox(
+                                height: 90.h,
+                                width: 90.w,
                                 child: Image.asset(
-                                  "assets/visa.png",
+                                  "assets/paypal.png",
                                   fit: BoxFit.fill,
                                 ),
                               ),
                               const FittedBox(
                                 fit: BoxFit.fitWidth,
                                 child: Text(
-                                  "**** **** **** 3241",
+                                  "monkey01@gmail.com",
                                   style: TextStyle(
-                                    color: mainColor,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 18,
                                   ),
@@ -296,32 +397,32 @@ class _CheckoutPageState extends State<CheckoutPage> {
                           ],
                         ),
                       ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          children: [
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text(
-                                    "Other Methods",
-                                    style: Theme.of(context)
-                                        .textTheme
-                                        .bodyText2!
-                                        .copyWith(
-                                          color: primaryFontColor,
-                                          fontWeight: FontWeight.bold,
-                                          //fontSize: 20,
-                                        ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ),
+                      // Expanded(
+                      //   flex: 1,
+                      //   child: Column(
+                      //     children: [
+                      //       Row(
+                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      //         children: [
+                      //           FittedBox(
+                      //             fit: BoxFit.fitWidth,
+                      //             child: Text(
+                      //               "Other Methods",
+                      //               style: Theme.of(context)
+                      //                   .textTheme
+                      //                   .bodyText2!
+                      //                   .copyWith(
+                      //                     color: primaryFontColor,
+                      //                     fontWeight: FontWeight.bold,
+                      //                     //fontSize: 20,
+                      //                   ),
+                      //             ),
+                      //           ),
+                      //         ],
+                      //       ),
+                      //     ],
+                      //   ),
+                      // ),
                     ],
                   ),
                 ),
