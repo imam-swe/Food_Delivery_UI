@@ -23,4 +23,5 @@ part 'reset_password/new_password.dart';
 
 
 //checkout
-part 'checkouts/thank_you_page.dart';
+part 'checkouts/checkout_page.dart';
+part 'checkouts/change_address_page.dart';

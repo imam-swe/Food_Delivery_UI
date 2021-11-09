@@ -70,7 +70,7 @@ class MyApp extends StatelessWidget {
           kRouteRegister: (context) => const RegisterPage(),
 
           //checkout
-          kRouteThank: (context) => const ThankPage(),
+          kRouteCheckout: (context) => const CheckoutPage(),
         },
         debugShowCheckedModeBanner: false,
       ),

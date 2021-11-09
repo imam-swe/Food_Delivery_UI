@@ -37,7 +37,8 @@ class LoginPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   //checkout
-                  Navigator.pushReplacementNamed(context, kRouteThank);
+                
+                  Navigator.pushNamed(context, kRouteCheckout);
                 },
                 child: const Text("Login"),
               ),
