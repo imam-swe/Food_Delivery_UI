@@ -160,7 +160,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               ),
             ),
             Container(
-              height: 15,
+              height: 15.h,
               color: placeholderColor,
             ),
             Expanded(
