@@ -275,17 +275,19 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             children: [
                               SizedBox(
                                 height: 90.h,
-                                width: 150.w,
+                                // width: 150.w,
                                 child: Row(
                                   children: [
                                     Image.asset(
                                       "assets/visa.png",
-                                      fit: BoxFit.fill,
+                                      width: 30,
+                                      //fit: BoxFit.fill,
                                     ),
+                                    SizedBox(width: kHorizontalPadding),
                                     const Text(
                                       "**** **** **** 3241",
                                       style: TextStyle(
-                                        color: mainColor,
+                                        //color: mainColor,
                                         fontWeight: FontWeight.bold,
                                         fontSize: 18,
                                       ),
@@ -337,21 +339,24 @@ class _CheckoutPageState extends State<CheckoutPage> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               SizedBox(
-                                height: 90.h,
-                                width: 90.w,
-                                child: Image.asset(
-                                  "assets/paypal.png",
-                                  fit: BoxFit.fill,
-                                ),
-                              ),
-                              const FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  "monkey01@gmail.com",
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
+                                height: 60.h,
+                                // width: 150.w,
+                                child: Row(
+                                  children: [
+                                    Image.asset(
+                                      "assets/paypal.png",
+                                      width: 30,
+                                      //fit: BoxFit.contain,
+                                    ),
+                                    SizedBox(width: kHorizontalPadding),
+                                    const Text(
+                                      "monkey01@gmail.com",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               InkWell(
@@ -445,7 +450,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         Text(
                           "Sub Total",
                           style: TextStyle(
-                            // color: mainColor,
+                            color: secondaryFontColor,
                             // fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
@@ -465,7 +470,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         Text(
                           "Delivery Cost",
                           style: TextStyle(
-                            // color: mainColor,
+                            color: secondaryFontColor,
                             // fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
@@ -485,7 +490,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         Text(
                           "Discount",
                           style: TextStyle(
-                            // color: mainColor,
+                            color: secondaryFontColor,
                             // fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
@@ -509,7 +514,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                         Text(
                           "Total",
                           style: TextStyle(
-                            // color: mainColor,
+                            color: secondaryFontColor,
                             // fontWeight: FontWeight.bold,
                             fontSize: 18,
                           ),
@@ -538,40 +543,13 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                 child: Column(
                   children: [
-                    SizedBox(
-                      height: size.height * .08,
-                      width: size.width,
-                      //padding: EdgeInsets.symmetric(vertical: 20),
+                    ElevatedButton(
+                      onPressed: () {
+                        //checkout
 
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50),
-                          ),
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          minimumSize: const Size(5, 5),
-                        ),
-                        onPressed: () {
-                          _showThankBottomSheet(size.height * .8, context);
-                        },
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10),
-                          child: FittedBox(
-                            fit: BoxFit.fitWidth,
-                            child: Text(
-                              "Send Order",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
-                                  ),
-                            ),
-                          ),
-                        ),
-                      ),
+                        _showThankBottomSheet(size.height * .8, context);
+                      },
+                      child: const Text("Send Order"),
                     ),
                   ],
                 ),
@@ -795,32 +773,43 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   textAlign: TextAlign.center,
                 ),
                 SizedBox(height: kVerticalPadding * 2),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     //_showModalBottomSheet(size.height * .7, context);
+                //   },
+                //   child: Padding(
+                //     padding: const EdgeInsets.symmetric(horizontal: 80),
+                //     child: FittedBox(
+                //       fit: BoxFit.fitWidth,
+                //       child: Text(
+                //         "Track My Order",
+                //         style: Theme.of(context).textTheme.bodyText2!.copyWith(
+                //               color: Colors.white,
+                //               fontWeight: FontWeight.bold,
+                //               fontSize: 20,
+                //             ),
+                //       ),
+                //     ),
+                //   ),
+                // ),
                 ElevatedButton(
                   onPressed: () {
-                    //_showModalBottomSheet(size.height * .7, context);
+                    // _showThankBottomSheet(size.height * .8, context);
                   },
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 80),
-                    child: FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Text(
-                        "Track My Order",
-                        style: Theme.of(context).textTheme.bodyText2!.copyWith(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                      ),
-                    ),
-                  ),
+                  child: const Text("Track My Order"),
                 ),
                 SizedBox(height: kVerticalPadding),
-                Text(
-                  'Back To Home',
-                  style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: primaryFontColor,
-                        fontWeight: FontWeight.bold,
-                      ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, kRouteStarter);
+                  },
+                  child: Text(
+                    'Back To Home',
+                    style: Theme.of(context).textTheme.headline6!.copyWith(
+                          color: primaryFontColor,
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
               ],
             ),
