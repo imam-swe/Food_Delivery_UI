@@ -28,6 +28,11 @@ class _SplashPageState extends State<SplashPage> {
             // 'assets/splashbg1.jpg',
             fit: BoxFit.fill,
           ),
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            color: Colors.white.withOpacity(0.9),
+          ),
           const SplashLogo(),
         ],
       ),

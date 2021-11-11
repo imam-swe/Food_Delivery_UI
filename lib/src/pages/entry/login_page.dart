@@ -37,8 +37,13 @@ class LoginPage extends StatelessWidget {
               ElevatedButton(
                 onPressed: () {
                   //checkout
-                
-                  Navigator.pushNamed(context, kRouteCheckout);
+
+                  //Navigator.pushNamed(context, kRouteCheckout);
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => const MainPage(),
+                    ),
+                  );
                 },
                 child: const Text("Login"),
               ),
@@ -89,7 +94,7 @@ class LoginPage extends StatelessWidget {
               LoginRegisterFooter(
                 question: 'Don\'t have an Account?',
                 actionText: ' Sign Up',
-                action: (){
+                action: () {
                   Navigator.pushReplacementNamed(context, kRouteRegister);
                 },
               ),
