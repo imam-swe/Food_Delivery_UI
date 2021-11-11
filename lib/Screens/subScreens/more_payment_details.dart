@@ -151,39 +151,35 @@ class _PaymentDetailState extends State<PaymentDetail> {
                     ),
                     Expanded(
                       flex: 1,
-                      child: Column(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                height: 90.h,
-                                width: 150.w,
-                                child: Image.asset(
-                                  "images/visa.png",
-                                  fit: BoxFit.fill,
-                                ),
+                          SizedBox(
+                            height: 90.h,
+                            width: 150.w,
+                            child: Image.asset(
+                              "images/visa.png",
+                              fit: BoxFit.fill,
+                            ),
+                          ),
+                          FittedBox(
+                            fit: BoxFit.fitWidth,
+                            child: Text("**** **** **** 3241"),
+                          ),
+                          Container(
+                            alignment: Alignment.center,
+                            height: 35,
+                            width: 100,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(50),
+                                border: Border.all(color: mainColor)),
+                            child: FittedBox(
+                              fit: BoxFit.fitWidth,
+                              child: Text(
+                                "Delete Card",
+                                style: TextStyle(color: mainColor),
                               ),
-                              FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text("**** **** **** 3241"),
-                              ),
-                              Container(
-                                alignment: Alignment.center,
-                                height: 35,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(50),
-                                    border: Border.all(color: mainColor)),
-                                child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text(
-                                    "Delete Card",
-                                    style: TextStyle(color: mainColor),
-                                  ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ],
                       ),
@@ -234,7 +230,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
           Expanded(
             flex: 3,
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 40.h),
               child: Column(
                 children: [
                   SizedBox(
@@ -243,38 +239,25 @@ class _PaymentDetailState extends State<PaymentDetail> {
                     //padding: EdgeInsets.symmetric(vertical: 20),
 
                     child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50),
-                        ),
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        minimumSize: const Size(5, 5),
-                      ),
                       onPressed: () {
                         _showModalBottomSheet(size.height * .8, context);
                       },
                       child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        padding: EdgeInsets.symmetric(horizontal: 10.w),
                         child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            const FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: Icon(
-                                FontAwesomeIcons.plus,
-                              ),
-                            ),
                             FittedBox(
                               fit: BoxFit.fitWidth,
                               child: Text(
-                                "Add another Credit/Debit Card",
+                                "+ Add another Credit/Debit Card",
                                 style: Theme.of(context)
                                     .textTheme
                                     .bodyText2!
                                     .copyWith(
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 20,
+                                      fontSize: 18,
                                     ),
                               ),
                             ),

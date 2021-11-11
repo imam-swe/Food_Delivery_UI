@@ -1,3 +1,9 @@
+// import 'package:flutter/material.dart';
+// import 'package:flutter_screenutil/flutter_screenutil.dart';
+// import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// import 'package:ecommerce_meal_monkey/Screens/main_page.dart';
+// import 'package:ecommerce_meal_monkey/Screens/subScreens/change_address_page.dart';
+// import 'package:ecommerce_meal_monkey/styles/styles.dart';
 part of pages;
 
 class CheckoutPage extends StatefulWidget {
@@ -10,548 +16,481 @@ class CheckoutPage extends StatefulWidget {
 class _CheckoutPageState extends State<CheckoutPage> {
   bool isSwitched = false;
   var textValue = 'Switch is OFF';
-
+  //bool address=true;
   bool _value = true;
 
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
-
-      /*
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        leading: GestureDetector(
-          onTap: () {/* Write listener code here */},
-          child: const Icon(
-            Icons.arrow_back_ios,
-            color: primaryFontColor, // add custom icons also
-          ),
-        ),
-        title: const Padding(
-          padding: EdgeInsets.all(8.0),
-          child: Text(
-            "Chechout",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-        ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 15.0),
-            child: IconButton(
-                onPressed: () {},
-                icon: const Icon(FontAwesomeIcons.shoppingCart)),
-          )
-        ],
-      ),
-      */
-
+      backgroundColor: placeholderColor,
       body: SafeArea(
         child: Column(
           children: [
             Expanded(
-              flex: 28,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FittedBox(
-                      fit: BoxFit.fitWidth,
-                      child: Row(
-                        children: [
-                          IconButton(
-                            onPressed: () {
-                              Navigator.pushReplacementNamed(
-                                  context, kRouteLogin);
-                            },
-                            icon: const Icon(
-                              Icons.arrow_back_ios,
-                              color: primaryFontColor,
-                            ),
-                          ),
-                          Text(
-                            //"Customize your payment method",
-                            "Checkout",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(
-                                    color: primaryFontColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 32),
-                          ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: size.height * .04,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      // height: MediaQuery.of(context).size.height,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            //"Customize your payment method",
-                            "Delivery Address",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline5!
-                                .copyWith(
-                                    color: secondaryFontColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 22),
-                          ),
-                          SizedBox(
-                            height: size.height * .02,
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                //"Customize your payment method",
-                                "653 Nostrand Ave.,\nBrooklyn, NY 11216",
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .headline5!
-                                    .copyWith(
-                                        color: primaryFontColor,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 24),
-                              ),
-                              GestureDetector(
-                                onTap: () {
-                                  Navigator.of(context).push(
+              flex: 3,
+              child: Container(
+                color: Colors.white,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      FittedBox(
+                        fit: BoxFit.fitWidth,
+                        child: Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pushAndRemoveUntil(
                                     MaterialPageRoute(
-                                      builder: (context) =>
-                                          const ChangeAddressPage(),
-                                    ),
-                                  );
-                                },
-                                child: Text(
+                                        builder: (context) => const MainPage()),
+                                    (Route<dynamic> route) => false);
+                              },
+                              icon: const Icon(
+                                Icons.arrow_back_ios,
+                                color: Color(0xffb6b7b7),
+                              ),
+                            ),
+                            Text(
+                              //"Customize your payment method",
+                              "Checkout",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5!
+                                  .copyWith(
+                                      color: primaryFontColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 32),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        height: size.height * .04,
+                      ),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 10),
+                        // height: MediaQuery.of(context).size.height,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              //"Customize your payment method",
+                              "Delivery Address",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .headline5!
+                                  .copyWith(
+                                      color: secondaryFontColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
                                   //"Customize your payment method",
-                                  "Change",
+                                  "653 Nostrand Ave.,\nBrooklyn, NY 11216",
                                   style: Theme.of(context)
                                       .textTheme
                                       .headline5!
                                       .copyWith(
-                                        color: mainColor,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
+                                          color: primaryFontColor,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 24),
+                                ),
+                                GestureDetector(
+                                  onTap: () {
+                                    setState(() {});
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            const ChangeAddressPage(),
                                       ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          SizedBox(
-                            height: size.height * .002,
-                            width: size.width,
-                            //color: placeholderColor,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-            Container(
-              height: 15.h,
-              color: placeholderColor,
-            ),
-            Expanded(
-              flex: 28,
-              child: Container(
-                height: size.height,
-                width: size.width,
-                decoration: const BoxDecoration(
-                  color: Colors.white70,
-                ),
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          FittedBox(
-                            fit: BoxFit.fitWidth,
-                            child: Text(
-                              "Payment method",
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .bodyText2!
-                                  .copyWith(
-                                    color: secondaryFontColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20,
+                                    );
+                                  },
+                                  child: Text(
+                                    //"Customize your payment method",
+                                    "Change",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headline5!
+                                        .copyWith(
+                                          color: mainColor,
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 18,
+                                        ),
                                   ),
-                            ),
-                          ),
-                          FittedBox(
-                            fit: BoxFit.fitWidth,
-                            child: GestureDetector(
-                              onTap: () {
-                                _showModalBottomSheet(
-                                    size.height * .8, context);
-                              },
-                              child: const Text(
-                                '+ Add Card',
-                                style: TextStyle(
-                                  color: mainColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
                                 ),
-                              ),
+                              ],
                             ),
-                          ),
-                        ],
-                      ),
-                      //Container(),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              height: 1.h,
-                              color: placeholderColor,
+                            SizedBox(
+                              height: size.height * .002,
+                              width: size.width,
+                              //color: placeholderColor,
                             ),
                           ],
                         ),
                       ),
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              const FittedBox(
-                                fit: BoxFit.fitWidth,
-                                child: Text(
-                                  "Cash on delivery",
-                                  style: TextStyle(
-                                    //color: mainColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    _value = !_value;
-                                  });
-                                },
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.orange,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: _value
-                                        ? const Icon(
-                                            Icons.check,
-                                            size: 8.0,
-                                            color: Colors.white,
-                                          )
-                                        : const Icon(
-                                            Icons.check_box_outline_blank,
-                                            size: 8.0,
-                                            color: Colors.white,
-                                          ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                height: 90.h,
-                                // width: 150.w,
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      "assets/visa.png",
-                                      width: 30,
-                                      //fit: BoxFit.fill,
-                                    ),
-                                    SizedBox(width: kHorizontalPadding),
-                                    const Text(
-                                      "**** **** **** 3241",
-                                      style: TextStyle(
-                                        //color: mainColor,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              // const FittedBox(
-                              //   fit: BoxFit.fitWidth,
-                              //   child: Text(
-                              //     "**** **** **** 3241",
-                              //     style: TextStyle(
-                              //       color: mainColor,
-                              //       fontWeight: FontWeight.bold,
-                              //       fontSize: 18,
-                              //     ),
-                              //   ),
-                              // ),
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    _value = !_value;
-                                  });
-                                },
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.orange,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: _value
-                                        ? const Icon(
-                                            Icons.check,
-                                            size: 8.0,
-                                            color: Colors.white,
-                                          )
-                                        : const Icon(
-                                            Icons.check_box_outline_blank,
-                                            size: 8.0,
-                                            color: Colors.white,
-                                          ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              SizedBox(
-                                height: 60.h,
-                                // width: 150.w,
-                                child: Row(
-                                  children: [
-                                    Image.asset(
-                                      "assets/paypal.png",
-                                      width: 30,
-                                      //fit: BoxFit.contain,
-                                    ),
-                                    SizedBox(width: kHorizontalPadding),
-                                    const Text(
-                                      "monkey01@gmail.com",
-                                      style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 18,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    _value = !_value;
-                                  });
-                                },
-                                child: Container(
-                                  decoration: const BoxDecoration(
-                                    shape: BoxShape.circle,
-                                    color: Colors.orange,
-                                  ),
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(10.0),
-                                    child: _value
-                                        ? const Icon(
-                                            Icons.check,
-                                            size: 8.0,
-                                            color: Colors.white,
-                                          )
-                                        : const Icon(
-                                            Icons.check_box_outline_blank,
-                                            size: 8.0,
-                                            color: Colors.white,
-                                          ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Container(
-                              height: 2.h,
-                              color: placeholderColor,
-                            ),
-                          ],
-                        ),
-                      ),
-                      // Expanded(
-                      //   flex: 1,
-                      //   child: Column(
-                      //     children: [
-                      //       Row(
-                      //         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      //         children: [
-                      //           FittedBox(
-                      //             fit: BoxFit.fitWidth,
-                      //             child: Text(
-                      //               "Other Methods",
-                      //               style: Theme.of(context)
-                      //                   .textTheme
-                      //                   .bodyText2!
-                      //                   .copyWith(
-                      //                     color: primaryFontColor,
-                      //                     fontWeight: FontWeight.bold,
-                      //                     //fontSize: 20,
-                      //                   ),
-                      //             ),
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ],
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),
               ),
             ),
-            Container(
-              height: 15,
-              color: placeholderColor,
-            ),
             Expanded(
-              flex: 20,
+              flex: 3,
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 30, vertical: 40),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Sub Total",
-                          style: TextStyle(
-                            color: secondaryFontColor,
-                            // fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  height: size.height,
+                  width: size.width,
+                  decoration: const BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 20),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            FittedBox(
+                              fit: BoxFit.fitWidth,
+                              child: Text(
+                                "Payment method",
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .bodyText2!
+                                    .copyWith(
+                                      color: secondaryFontColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                              ),
+                            ),
+                            FittedBox(
+                              fit: BoxFit.fitWidth,
+                              child: GestureDetector(
+                                onTap: () {
+                                  _showModalBottomSheet(
+                                      size.height * .8, context);
+                                },
+                                child: const Text(
+                                  '+ Add Card',
+                                  style: TextStyle(
+                                    color: Color(0xfffc6011),
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        //Container(),
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 1.h,
+                                color: placeholderColor,
+                              ),
+                            ],
                           ),
                         ),
-                        Text(
-                          '\$21',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Delivery Cost",
-                          style: TextStyle(
-                            color: secondaryFontColor,
-                            // fontWeight: FontWeight.bold,
-                            fontSize: 18,
+                        Column(
+                          children: [
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                const FittedBox(
+                                  fit: BoxFit.fitWidth,
+                                  child: Text(
+                                    "Cash on delivery",
+                                    style: TextStyle(
+                                      //color: mainColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      _value = !_value;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.orange,
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: _value
+                                          ? const Icon(
+                                              Icons.check,
+                                              size: 8.0,
+                                              color: Colors.white,
+                                            )
+                                          : const Icon(
+                                              Icons.check_box_outline_blank,
+                                              size: 8.0,
+                                              color: Colors.white,
+                                            ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Image.asset(
+                                  "images/visa.png",
+                                  width: 30,
+                                  //fit: BoxFit.fill,
+                                ),
+                                //SizedBox(width: kHorizontalPadding),
+                                const Padding(
+                                  padding: EdgeInsets.only(right: 80),
+                                  child: Text(
+                                    "**** **** **** 3241",
+                                    style: TextStyle(
+                                      //color: mainColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      _value = !_value;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.orange,
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: _value
+                                          ? const Icon(
+                                              Icons.check,
+                                              size: 8.0,
+                                              color: Colors.white,
+                                            )
+                                          : const Icon(
+                                              Icons.check_box_outline_blank,
+                                              size: 8.0,
+                                              color: Colors.white,
+                                            ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  "images/payp.png",
+                                  width: 15,
+                                  //fit: BoxFit.fill,
+                                ),
+                                const Padding(
+                                  padding: EdgeInsets.only(right: 40),
+                                  child: FittedBox(
+                                    fit: BoxFit.fitWidth,
+                                    child: Text(
+                                      "ceo.sir@excelitai.com",
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      _value = !_value;
+                                    });
+                                  },
+                                  child: Container(
+                                    decoration: const BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.orange,
+                                    ),
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(10.0),
+                                      child: _value
+                                          ? const Icon(
+                                              Icons.check,
+                                              size: 8.0,
+                                              color: Colors.white,
+                                            )
+                                          : const Icon(
+                                              Icons.check_box_outline_blank,
+                                              size: 8.0,
+                                              color: Colors.white,
+                                            ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Expanded(
+                          flex: 1,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                height: 2.h,
+                                color: placeholderColor,
+                              ),
+                            ],
                           ),
                         ),
-                        Text(
-                          '\$21',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
                       ],
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Discount",
-                          style: TextStyle(
-                            color: secondaryFontColor,
-                            // fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          '\$21',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      height: 1,
-                      color: placeholderColor,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: const [
-                        Text(
-                          "Total",
-                          style: TextStyle(
-                            color: secondaryFontColor,
-                            // fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        Text(
-                          '\$21',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        )
-                      ],
-                    ),
-                  ],
+                  ),
                 ),
               ),
             ),
-            Container(
-              height: 15,
-              color: placeholderColor,
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Container(
+                  color: Colors.white,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "Sub Total",
+                              style: TextStyle(
+                                color: Color(0xff7c7d7e),
+                                // fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '\$21',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "Delivery Cost",
+                              style: TextStyle(
+                                color: Color(0xff7c7d7e),
+                                // fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '\$21',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "Discount",
+                              style: TextStyle(
+                                color: Color(0xff7c7d7e),
+                                // fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '\$21',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
+                        ),
+                        Container(
+                          height: 1,
+                          color: placeholderColor,
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            Text(
+                              "Total",
+                              style: TextStyle(
+                                color: Color(0xff7c7d7e),
+                                // fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            ),
+                            Text(
+                              '\$21',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 18,
+                              ),
+                            )
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
             Expanded(
-              flex: 20,
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
-                child: Column(
-                  children: [
-                    ElevatedButton(
-                      onPressed: () {
-                        //checkout
+              flex: 2,
+              child: Container(
+                height: size.height,
+                width: size.width,
+                color: Colors.white,
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 40.w, vertical: 40.h),
+                  child: Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {
+                          //checkout
 
-                        _showThankBottomSheet(size.height * .8, context);
-                      },
-                      child: const Text("Send Order"),
-                    ),
-                  ],
+                          _showThankBottomSheet(size.height * .8, context);
+                        },
+                        child: const Text("Send Order"),
+                      ),
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -583,15 +522,20 @@ class _CheckoutPageState extends State<CheckoutPage> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
-                    FittedBox(
+                  children: [
+                    const FittedBox(
                       fit: BoxFit.fitWidth,
                       child: Text("Add Credit/Debit Card"),
                     ),
                     FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Icon(Icons.cancel_outlined),
-                    )
+                      child: IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: const Icon(Icons.cancel_outlined),
+                      ),
+                    ),
                   ],
                 ),
                 TextField(
@@ -743,7 +687,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  'assets/thank.png',
+                  'images/thank.png',
                   fit: BoxFit.fill,
                   width: 600.w,
                 ),
@@ -801,7 +745,10 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 SizedBox(height: kVerticalPadding),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, kRouteStarter);
+                    Navigator.of(context).pushAndRemoveUntil(
+                        MaterialPageRoute(
+                            builder: (context) => const MainPage()),
+                        (Route<dynamic> route) => false);
                   },
                   child: Text(
                     'Back To Home',

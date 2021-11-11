@@ -20,6 +20,7 @@ part 'entry/register_page.dart';
 part 'reset_password/enter_email.dart';
 part 'reset_password/enter_otp.dart';
 part 'reset_password/new_password.dart';
+// part 'Screens/subScreens/more_myorder_page.dart';
 
 //checkout
 part 'checkouts/checkout_page.dart';

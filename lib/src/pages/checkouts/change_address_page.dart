@@ -29,12 +29,12 @@ class _ChangeAddressPageState extends State<ChangeAddressPage> {
                         children: [
                           IconButton(
                             onPressed: () {
-                              Navigator.pushReplacementNamed(
-                                  context, kRouteLogin);
+//                              Navigator.pushReplacementNamed(
+//                                  context, kRouteLogin);
                             },
                             icon: const Icon(
                               Icons.arrow_back_ios,
-                              color: primaryFontColor,
+                              color: Color(0xff4a4b4d),
                             ),
                           ),
                           Text(
@@ -53,10 +53,14 @@ class _ChangeAddressPageState extends State<ChangeAddressPage> {
                     ),
                   ),
                   Expanded(
-                    child: Image.asset(
-                      'assets/map.png',
-                      fit: BoxFit.cover,
-                      //width: 600.w,
+                    child: SizedBox(
+                      height: MediaQuery.of(context).size.height,
+                      width: MediaQuery.of(context).size.width,
+                      child: Image.asset(
+                        "images/map.png",
+                        fit: BoxFit.fill,
+                        //width: 600.w,
+                      ),
                     ),
                   ),
                   SizedBox(height: kVerticalPadding),
@@ -94,7 +98,7 @@ class _ChangeAddressPageState extends State<ChangeAddressPage> {
                                 backgroundColor: Color(0xfffecfb8),
                                 child: Icon(
                                   Icons.star_rounded,
-                                  color: mainColor,
+                                  color: Color(0xfffc6011),
                                 ),
                               ),
                             ),
@@ -132,18 +136,6 @@ class _ChangeAddressPageState extends State<ChangeAddressPage> {
           ],
         ),
       ),
-      // bottomNavigationBar: Column(
-      //   children: [
-      //     TextFormField(
-      //       style: const TextStyle(color: primaryFontColor),
-      //       keyboardType: TextInputType.emailAddress,
-      //       decoration: const InputDecoration(
-      //         labelText: 'Search Address',
-      //         isCollapsed: true,
-      //       ),
-      //     ),
-      //   ],
-      // ),
     );
   }
 }

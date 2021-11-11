@@ -1,10 +1,11 @@
 // ignore_for_file: unused_import, unused_local_variable, prefer_const_constructors
 
+import 'package:ecommerce_meal_monkey/src/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/Screens/main_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/checkout_page.dart';
+// import 'package:ecommerce_meal_monkey/src/pages/checkouts/checkout_page.dart';
 import 'package:ecommerce_meal_monkey/model/inbox_list_model.dart';
 import 'package:ecommerce_meal_monkey/model/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
