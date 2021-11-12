@@ -2,12 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/main_page.dart';
+import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
 import 'package:ecommerce_meal_monkey/model/inbox_list_model.dart';
 import 'package:ecommerce_meal_monkey/model/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
-// import 'package:ecommerce_meal_monkey/styles/colors.dart';
-// import 'package:ecommerce_meal_monkey/styles/dimenssions.dart';
 
 class Inbox extends StatelessWidget {
   @override
@@ -72,19 +70,13 @@ class Inbox extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                print("OK>>>>>>>>>>>>>>>>>>>>");
-//                setState(() {
-//                  state=false;
-//                });
+                print("OK>>>>>>>>>>>>>>>>");
               },
               child: Container(
                 alignment: Alignment.center,
                 //height: 70,
                 width: MediaQuery.of(context).size.width,
                 color: index % 2 == 0 ? Colors.black12 : Colors.white,
-//                decoration: BoxDecoration(
-//                  border: Border.all(color: placeholderColor),
-//                ),
 
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -131,21 +123,6 @@ class Inbox extends StatelessWidget {
                 ),
               ),
             ),
-            //Image.asset(data.imagePath!.toString(),fit: BoxFit.fill),
-//                  Container(
-//                    width: MediaQuery.of(context).size.width,
-//                    height: 700.h,
-//                    decoration: BoxDecoration(
-//                        image: DecorationImage(
-//                            image: AssetImage(data.imagePath!.toString()),
-//                            fit: BoxFit.cover),
-//                        borderRadius: BorderRadius.circular(12),
-//                        boxShadow: [
-//                          BoxShadow(
-//                            blurRadius: 5,
-//                          )
-//                        ]),
-//                  ),
           ],
         );
       },

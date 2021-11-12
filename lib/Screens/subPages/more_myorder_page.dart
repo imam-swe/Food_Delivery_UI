@@ -4,7 +4,7 @@ import 'package:ecommerce_meal_monkey/src/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/main_page.dart';
+import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
 // import 'package:ecommerce_meal_monkey/src/pages/checkouts/checkout_page.dart';
 import 'package:ecommerce_meal_monkey/model/inbox_list_model.dart';
 import 'package:ecommerce_meal_monkey/model/notifications_list_model.dart';
@@ -118,7 +118,7 @@ class _MyOrdersState extends State<MyOrders> {
                                 child: Text(
                                   "(124 rattings)",
                                   style: TextStyle(
-                                      color: placeholderColor,
+                                      color: secondaryFontColor,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),
@@ -131,7 +131,7 @@ class _MyOrdersState extends State<MyOrders> {
                                     left: 0, right: 2, bottom: 4),
                                 child: Text(
                                   "Burger",
-                                  style: TextStyle(color: placeholderColor),
+                                  style: TextStyle(color: secondaryFontColor),
                                 ),
                               ),
                               Padding(
@@ -148,7 +148,7 @@ class _MyOrdersState extends State<MyOrders> {
                                 padding: EdgeInsets.only(left: 2, right: 15),
                                 child: Text(
                                   "Western Food",
-                                  style: TextStyle(color: placeholderColor),
+                                  style: TextStyle(color: secondaryFontColor),
                                 ),
                               ),
                             ],
@@ -165,7 +165,7 @@ class _MyOrdersState extends State<MyOrders> {
                                 child: Text(
                                   "No 03,4th Lane, Newyork",
                                   style: TextStyle(
-                                      color: placeholderColor,
+                                      color: secondaryFontColor,
                                       fontWeight: FontWeight.bold),
                                 ),
                               ),

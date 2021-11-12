@@ -1,17 +1,54 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors
+// ignore_for_file: avoid_print, file_names
 
+import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/Detail_Food_Page.dart';
+import 'package:ecommerce_meal_monkey/Screens/subPages/detail_food_page.dart';
 import 'package:ecommerce_meal_monkey/model/Desserts_list_model.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
-// import 'package:ecommerce_meal_monkey/styles/dimenssions.dart';
 
-class dessertsListView extends StatelessWidget {
-  const dessertsListView({Key? key}) : super(key: key);
+import 'package:ecommerce_meal_monkey/styles/styles.dart';
+
+class Desserts extends StatefulWidget {
+  const Desserts({Key? key}) : super(key: key);
+
+  @override
+  _DessertsState createState() => _DessertsState();
+}
+
+class _DessertsState extends State<Desserts> {
+  bool state = true;
+  Widget checkState() {
+    if (state == true) {
+      return main();
+    } else {
+      state = true;
+      return const Detail();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    return checkState();
+  }
+
+  Widget main() {
+    return Scaffold(
+      body: ListView(
+        children: [
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
+            child: const Search(),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          _dessertListView(),
+        ],
+      ),
+    );
+  }
+
+  Widget _dessertListView() {
     return ListView.separated(
       separatorBuilder: (context, index) {
         return SizedBox(
@@ -30,7 +67,10 @@ class dessertsListView extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                Detail();
+                print("OK>>>>>>>>>>>>>>>>>>>>");
+                setState(() {
+                  state = false;
+                });
               },
               child: Container(
                 height: 210,
@@ -55,7 +95,7 @@ class dessertsListView extends StatelessWidget {
                       ),
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.star,
                             color: mainColor,
                             size: 15,
@@ -64,18 +104,18 @@ class dessertsListView extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 2),
                             child: Text(
                               data.rating.toString(),
-                              style: TextStyle(color: mainColor),
+                              style: const TextStyle(color: mainColor),
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(left: 0, right: 2),
                             child: Text(
                               data.ratingTotal.toString(),
-                              style: TextStyle(color: placeholderColor),
+                              style: const TextStyle(color: placeholderColor),
                             ),
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 2),
+                          const Padding(
+                            padding: EdgeInsets.only(left: 2),
                             child: Text(
                               ".",
                               style: TextStyle(
@@ -88,14 +128,14 @@ class dessertsListView extends StatelessWidget {
                             padding: const EdgeInsets.only(left: 2, right: 2),
                             child: Text(
                               data.label.toString(),
-                              style: TextStyle(
+                              style: const TextStyle(
                                   color: placeholderColor,
                                   fontWeight: FontWeight.bold),
                             ),
                           )
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       )
                     ],
@@ -103,21 +143,6 @@ class dessertsListView extends StatelessWidget {
                 ),
               ),
             ),
-            //Image.asset(data.imagePath!.toString(),fit: BoxFit.fill),
-//                  Container(
-//                    width: MediaQuery.of(context).size.width,
-//                    height: 700.h,
-//                    decoration: BoxDecoration(
-//                        image: DecorationImage(
-//                            image: AssetImage(data.imagePath!.toString()),
-//                            fit: BoxFit.cover),
-//                        borderRadius: BorderRadius.circular(12),
-//                        boxShadow: [
-//                          BoxShadow(
-//                            blurRadius: 5,
-//                          )
-//                        ]),
-//                  ),
             SizedBox(
               height: 25.h,
             ),

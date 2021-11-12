@@ -1,4 +1,4 @@
-// ignore_for_file: avoid_print, file_names, prefer_typing_uninitialized_variables, prefer_const_constructors, duplicate_ignore
+// ignore_for_file: file_names, avoid_print, prefer_typing_uninitialized_variables
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -35,7 +35,7 @@ class _DetailState extends State<Detail> {
             width: MediaQuery.of(context).size.width,
             // ignore: prefer_const_constructors
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                     topRight: Radius.circular(50),
                     topLeft: Radius.circular(50)),
                 color: Colors.white),
@@ -48,7 +48,7 @@ class _DetailState extends State<Detail> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         height: 25,
                       ),
                       Text(
@@ -133,7 +133,7 @@ class _DetailState extends State<Detail> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Text(
@@ -143,7 +143,7 @@ class _DetailState extends State<Detail> {
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Text(
@@ -153,7 +153,7 @@ class _DetailState extends State<Detail> {
                             fontWeight: FontWeight.bold,
                             fontSize: 12),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                       Text(
@@ -163,26 +163,19 @@ class _DetailState extends State<Detail> {
                             fontWeight: FontWeight.bold,
                             fontSize: 20),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Container(
                         height: 30,
                         width: MediaQuery.of(context).size.width,
                         color: Colors.black12,
-//                    decoration: ShapeDecoration(
-//                      color: placeholderColor,
-//                      shape: RoundedRectangleBorder(
-//                        side: BorderSide(width: 1.0, style: BorderStyle.solid),
-//                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-//                      ),
-//                    ),
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: DropdownButton(
                             //itemHeight: 100,
                             //elevation: 100,
                             isExpanded: true,
-                            icon: Icon(Icons.arrow_drop_down),
+                            icon: const Icon(Icons.arrow_drop_down),
                             dropdownColor: placeholderColor,
                             value: _value,
                             items: const [
@@ -198,11 +191,11 @@ class _DetailState extends State<Detail> {
                             onChanged: (value) {
                               _value = value;
                             },
-                            hint: Text("- Select Zise of the portion -"),
+                            hint: const Text("- Select Zise of the portion -"),
                             underline: DropdownButtonHideUnderline(
                                 child: Container())),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Container(
@@ -216,12 +209,12 @@ class _DetailState extends State<Detail> {
 //                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
 //                      ),
 //                    ),
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: DropdownButton(
                             //itemHeight: 100,
                             //elevation: 100,
                             isExpanded: true,
-                            icon: Icon(Icons.arrow_drop_down),
+                            icon: const Icon(Icons.arrow_drop_down),
                             dropdownColor: placeholderColor,
                             value: _value,
                             items: const [
@@ -237,11 +230,11 @@ class _DetailState extends State<Detail> {
                             onChanged: (value) {
                               _value = value;
                             },
-                            hint: Text("- Select the Ingredients -"),
+                            hint: const Text("- Select the Ingredients -"),
                             underline: DropdownButtonHideUnderline(
                                 child: Container())),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 8,
                       ),
                       Row(
@@ -284,9 +277,9 @@ class _DetailState extends State<Detail> {
                                               borderRadius:
                                                   BorderRadius.circular(50),
                                             ),
-                                            padding: EdgeInsets.symmetric(
+                                            padding: const EdgeInsets.symmetric(
                                                 horizontal: 10),
-                                            minimumSize: Size(5, 5),
+                                            minimumSize: const Size(5, 5),
                                           ),
                                           onPressed: () {
                                             if (quantity > 0) {
@@ -299,7 +292,7 @@ class _DetailState extends State<Detail> {
                                               });
                                             }
                                           },
-                                          child: Icon(
+                                          child: const Icon(
                                             FontAwesomeIcons.minus,
                                             size: 20,
                                           ),
@@ -329,16 +322,16 @@ class _DetailState extends State<Detail> {
                                               borderRadius:
                                                   BorderRadius.circular(50),
                                             ),
-                                            padding: EdgeInsets.symmetric(
+                                            padding: const EdgeInsets.symmetric(
                                                 horizontal: 10),
-                                            minimumSize: Size(5, 5),
+                                            minimumSize: const Size(5, 5),
                                           ),
                                           onPressed: () {
                                             setState(() {
                                               quantity++;
                                             });
                                           },
-                                          child: Icon(
+                                          child: const Icon(
                                             FontAwesomeIcons.plus,
                                             size: 20,
                                           ),
@@ -360,7 +353,7 @@ class _DetailState extends State<Detail> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * .2,
                     width: MediaQuery.of(context).size.width * .2,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                         color: mainColor,
                         borderRadius: BorderRadius.only(
                             topRight: Radius.circular(40),
@@ -372,12 +365,8 @@ class _DetailState extends State<Detail> {
                   child: Container(
                     height: MediaQuery.of(context).size.height * .2,
                     width: MediaQuery.of(context).size.width,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
-//                      borderRadius: BorderRadius.only(
-//                        topRight: Radius.circular(50),
-//                        bottomRight: Radius.circular(50)
-//                      )
                     ),
                     child: Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 18),
@@ -392,7 +381,7 @@ class _DetailState extends State<Detail> {
                               width: MediaQuery.of(context).size.width * .8,
                               decoration: BoxDecoration(
                                 color: Colors.white,
-                                borderRadius: BorderRadius.only(
+                                borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(10),
                                   bottomRight: Radius.circular(10),
                                   topLeft: Radius.circular(40),
@@ -403,7 +392,7 @@ class _DetailState extends State<Detail> {
                                     color: Colors.grey.withOpacity(0.5),
                                     spreadRadius: 0,
                                     blurRadius: 5,
-                                    offset: Offset(
+                                    offset: const Offset(
                                         0, 3), // changes position of shadow
                                   ),
                                 ],
@@ -449,8 +438,9 @@ class _DetailState extends State<Detail> {
                                                 .4,
                                         child: ElevatedButton(
                                           style: ElevatedButton.styleFrom(
-                                              padding: EdgeInsets.symmetric(
-                                                  horizontal: 20)),
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      horizontal: 20)),
                                           onPressed: () {
                                             print(
                                                 "Ok>>>>>>>>>>>>>>>Add To cart");
@@ -494,7 +484,7 @@ class _DetailState extends State<Detail> {
                                       color: Colors.grey.withOpacity(0.5),
                                       spreadRadius: 2,
                                       blurRadius: 5,
-                                      offset: Offset(
+                                      offset: const Offset(
                                           0, 3), // changes position of shadow
                                     ),
                                   ],
@@ -502,11 +492,8 @@ class _DetailState extends State<Detail> {
                                 child: IconButton(
                                   onPressed: () {
                                     print("Ok>>>>>>>>>>>>>>>cart");
-//                                if(level.toString()=='3'){
-//                                  print("Desserts >>>>>>>>>>>>>>>>>>>>>>>>");
-//                                }
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     FontAwesomeIcons.shoppingCart,
                                     color: mainColor,
                                     size: 20,

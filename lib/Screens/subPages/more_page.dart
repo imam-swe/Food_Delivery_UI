@@ -2,11 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/more_aboutUs_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/more_inbox_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/more_myorder_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/more_notification_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/more_payment_details.dart';
+import 'package:ecommerce_meal_monkey/Screens/subPages/more_about_us_page.dart';
+import 'package:ecommerce_meal_monkey/Screens/subPages/more_inbox_page.dart';
+import 'package:ecommerce_meal_monkey/Screens/subPages/more_myorder_page.dart';
+import 'package:ecommerce_meal_monkey/Screens/subPages/more_notification_page.dart';
+import 'package:ecommerce_meal_monkey/Screens/subPages/more_payment_details.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 // import 'package:foodecom/styles/dimenssions.dart';

@@ -81,20 +81,6 @@ class PopulerRestaurantsCategoryList extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Image.asset(data.imagePath!.toString(), fit: BoxFit.fill),
-//                  Container(
-//                    width: MediaQuery.of(context).size.width,
-//                    height: 700.h,
-//                    decoration: BoxDecoration(
-//                        image: DecorationImage(
-//                            image: AssetImage(data.imagePath!.toString()),
-//                            fit: BoxFit.cover),
-//                        borderRadius: BorderRadius.circular(12),
-//                        boxShadow: [
-//                          BoxShadow(
-//                            blurRadius: 5,
-//                          )
-//                        ]),
-//                  ),
             SizedBox(
               height: 25.h,
             ),

@@ -1,15 +1,14 @@
-// ignore_for_file: avoid_print, file_names, prefer_const_constructors, duplicate_ignore
+// ignore_for_file: prefer_const_constructors, avoid_print
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/main_page.dart';
+import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
 import 'package:ecommerce_meal_monkey/model/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
-// import 'package:ecommerce_meal_monkey/styles/colors.dart';
 // import 'package:ecommerce_meal_monkey/styles/dimenssions.dart';
 
-class AboutUs extends StatelessWidget {
-  const AboutUs({Key? key}) : super(key: key);
+class Notifications extends StatelessWidget {
+  const Notifications({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +22,7 @@ class AboutUs extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => MainPage()),
                 (Route<dynamic> route) => false);
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_ios,
             color: primaryFontColor, // add custom icons also
           ),
@@ -31,7 +30,7 @@ class AboutUs extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "About Us",
+            "Notifications",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
@@ -45,7 +44,6 @@ class AboutUs extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          // ignore: prefer_const_constructors
           SizedBox(
             height: 30,
           ),
@@ -66,7 +64,7 @@ class AboutUs extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      itemCount: NotificationsList.list.length - 4,
+      itemCount: NotificationsList.list.length,
       itemBuilder: (context, index) {
         NotificationsList data = NotificationsList.list[index];
         return Column(
@@ -75,24 +73,17 @@ class AboutUs extends StatelessWidget {
             InkWell(
               onTap: () {
                 print("OK>>>>>>>>>>>>>>>>>>>>");
-//                setState(() {
-//                  state=false;
-//                });
               },
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                padding: const EdgeInsets.only(bottom: 8.0),
                 child: Container(
-                  //alignment: Alignment.center,
+                  alignment: Alignment.center,
                   //height: 100,
                   width: MediaQuery.of(context).size.width,
-                  color: index % 2 == 0 ? Colors.white : Colors.white,
-//                decoration: BoxDecoration(
-//                  border: Border.all(color: placeholderColor),
-//                ),
-
+                  color: index % 2 == 0 ? Colors.black12 : Colors.white,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Expanded(
                         flex: 1,
@@ -103,23 +94,31 @@ class AboutUs extends StatelessWidget {
                         ),
                       ),
                       Expanded(
-                        flex: 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              data.notice!.toString(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline5!
-                                  .copyWith(
-                                    color: placeholderColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                            ),
-                          ],
+                        flex: 8,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                data.notice!.toString(),
+                              ),
+                              FittedBox(
+                                fit: BoxFit.fitWidth,
+                                child: Text(
+                                  data.time!.toString(),
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .bodyText2!
+                                      .copyWith(
+                                        color: secondaryFontColor,
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 15,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
                       ),
                     ],
@@ -127,21 +126,6 @@ class AboutUs extends StatelessWidget {
                 ),
               ),
             ),
-            //Image.asset(data.imagePath!.toString(),fit: BoxFit.fill),
-//                  Container(
-//                    width: MediaQuery.of(context).size.width,
-//                    height: 700.h,
-//                    decoration: BoxDecoration(
-//                        image: DecorationImage(
-//                            image: AssetImage(data.imagePath!.toString()),
-//                            fit: BoxFit.cover),
-//                        borderRadius: BorderRadius.circular(12),
-//                        boxShadow: [
-//                          BoxShadow(
-//                            blurRadius: 5,
-//                          )
-//                        ]),
-//                  ),
           ],
         );
       },

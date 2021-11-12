@@ -1,13 +1,9 @@
-// ignore_for_file: unused_local_variable, prefer_const_constructors, file_names
-
+import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/widgets/home/headingRestaurants.dart';
-import 'package:ecommerce_meal_monkey/Screens/widgets/home/Resturant_or_item_Category_list.dart';
-import '../widgets/home/currentLocationBotton.dart';
-import '../widgets/home/searchFoodTextField.dart';
-// import "package:ecommerce_meal_monkey/styles/dimenssions.dart";
-// import 'package:ecommerce_meal_monkey/styles/colors.dart';
+import 'package:ecommerce_meal_monkey/Screens/widgets/home/heading_restaurants.dart';
+import 'package:ecommerce_meal_monkey/Screens/widgets/home/resturant_or_item_category_list.dart';
+import '../widgets/home/current_location_botton.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class HomePage extends StatelessWidget {
@@ -15,18 +11,17 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: mainColor,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
+        title: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text("Good morning Akila!"),
         ),
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(FontAwesomeIcons.shoppingCart),
+            icon: const Icon(FontAwesomeIcons.shoppingCart),
           ),
         ],
       ),
@@ -36,26 +31,23 @@ class HomePage extends StatelessWidget {
         child: ListView(children: [
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-            child: currentLocationButton(),
+            child: const CurrentLocationButton(),
           ),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-            child: searchFoodTextField(),
+            child: const Search(),
           ),
           SizedBox(
             height: kVerticalPadding,
           ),
-          HomeCategoryList(),
-//        SizedBox(
-//          height: kVerticalPadding,
-//        ),
+          const HomeCategoryList(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
             child: HeadingRestaurants(
               heading: 'Popular Restaurants',
             ),
           ),
-          PopulerRestaurantsCategoryList(),
+          const PopulerRestaurantsCategoryList(),
           SizedBox(
             height: kVerticalPadding,
           ),
@@ -65,14 +57,14 @@ class HomePage extends StatelessWidget {
               heading: 'Most Popular',
             ),
           ),
-          MostPopularList(),
+          const MostPopularList(),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
             child: HeadingRestaurants(
               heading: 'Recent Items',
             ),
           ),
-          RecentItems()
+          const RecentItems()
         ]),
       ),
     );

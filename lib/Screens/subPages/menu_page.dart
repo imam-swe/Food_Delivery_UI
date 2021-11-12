@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/main_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/subScreens/Desserts_page.dart';
-import 'package:ecommerce_meal_monkey/Screens/widgets/menu_page.dart';
+import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
+import 'package:ecommerce_meal_monkey/src/pages/subPages/desserts_page.dart';
+import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class MenuHome extends StatefulWidget {
