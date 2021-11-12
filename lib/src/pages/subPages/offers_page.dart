@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/model/offers_list_model.dart';
+import 'package:ecommerce_meal_monkey/src/models/offers_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
-// import 'package:foodecom/styles/dimenssions.dart';
 
 class Offers extends StatelessWidget {
   const Offers({Key? key}) : super(key: key);
@@ -68,20 +67,6 @@ class Offers extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Image.asset(data.imagePath!.toString(), fit: BoxFit.fill),
-//                  Container(
-//                    width: MediaQuery.of(context).size.width,
-//                    height: 700.h,
-//                    decoration: BoxDecoration(
-//                        image: DecorationImage(
-//                            image: AssetImage(data.imagePath!.toString()),
-//                            fit: BoxFit.cover),
-//                        borderRadius: BorderRadius.circular(12),
-//                        boxShadow: [
-//                          BoxShadow(
-//                            blurRadius: 5,
-//                          )
-//                        ]),
-//                  ),
                   SizedBox(
                     height: 25.h,
                   ),

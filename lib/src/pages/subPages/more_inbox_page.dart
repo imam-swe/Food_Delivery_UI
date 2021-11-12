@@ -1,16 +1,13 @@
-// ignore_for_file: avoid_print, file_names, prefer_const_constructors, duplicate_ignore
+// ignore_for_file: unused_import, avoid_print, use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
-import 'package:ecommerce_meal_monkey/model/notifications_list_model.dart';
+import 'package:ecommerce_meal_monkey/src/models/inbox_list_model.dart';
+import 'package:ecommerce_meal_monkey/src/models/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
-// import 'package:ecommerce_meal_monkey/styles/colors.dart';
-// import 'package:ecommerce_meal_monkey/styles/dimenssions.dart';
 
-class AboutUs extends StatelessWidget {
-  const AboutUs({Key? key}) : super(key: key);
-
+class Inbox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,7 +28,7 @@ class AboutUs extends StatelessWidget {
         title: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Text(
-            "About Us",
+            "Inbox",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           ),
         ),
@@ -45,7 +42,6 @@ class AboutUs extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          // ignore: prefer_const_constructors
           SizedBox(
             height: 30,
           ),
@@ -66,55 +62,64 @@ class AboutUs extends StatelessWidget {
       physics: BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
-      itemCount: NotificationsList.list.length - 4,
+      itemCount: InboxListModel.list.length,
       itemBuilder: (context, index) {
-        NotificationsList data = NotificationsList.list[index];
+        InboxListModel data = InboxListModel.list[index];
         return Column(
           //crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             InkWell(
               onTap: () {
-                print("OK>>>>>>>>>>>>>>>>>>>>");
+                print("OK>>>>>>>>>>>>>>>>");
               },
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 8.0),
-                child: Container(
-                  width: MediaQuery.of(context).size.width,
-                  color: index % 2 == 0 ? Colors.white : Colors.white,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        flex: 1,
-                        child: Icon(
+              child: Container(
+                alignment: Alignment.center,
+                //height: 70,
+                width: MediaQuery.of(context).size.width,
+                color: index % 2 == 0 ? Colors.black12 : Colors.white,
+
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      flex: 4,
+                      child: ListTile(
+                        onTap: () {},
+                        leading: Icon(
                           FontAwesomeIcons.solidDotCircle,
+                          color: Colors.pink,
                           size: 10,
-                          color: mainColor,
                         ),
-                      ),
-                      Expanded(
-                        flex: 4,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              data.notice!.toString(),
-                              style: Theme.of(context)
-                                  .textTheme
-                                  .headline5!
-                                  .copyWith(
-                                    color: secondaryFontColor,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 10,
-                                  ),
-                            ),
-                          ],
+                        title: Text(
+                          data.heading!.toString(),
                         ),
+                        subtitle: Text(
+                          data.notice!.toString(),
+                          maxLines: 2,
+                          style: TextStyle(),
+                        ),
+                        //trailing: Icon(FontAwesomeIcons.solidDotCircle,color: Colors.pink,size: 10,),
                       ),
-                    ],
-                  ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            data.time!.toString(),
+                            style: TextStyle(fontSize: 8),
+                          ),
+                          Icon(
+                            Icons.star_border,
+                            color: mainColor,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

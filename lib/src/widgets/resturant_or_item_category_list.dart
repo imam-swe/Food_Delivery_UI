@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ecommerce_meal_monkey/model/category_model.dart';
-import 'package:ecommerce_meal_monkey/model/RestaurantsList.dart';
+import 'package:ecommerce_meal_monkey/src/models/category_model.dart';
+import 'package:ecommerce_meal_monkey/src/models/RestaurantsList.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class HomeCategoryList extends StatelessWidget {

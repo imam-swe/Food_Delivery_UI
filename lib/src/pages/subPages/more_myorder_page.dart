@@ -5,9 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
-// import 'package:ecommerce_meal_monkey/src/pages/checkouts/checkout_page.dart';
-import 'package:ecommerce_meal_monkey/model/inbox_list_model.dart';
-import 'package:ecommerce_meal_monkey/model/notifications_list_model.dart';
+import 'package:ecommerce_meal_monkey/src/models/inbox_list_model.dart';
+import 'package:ecommerce_meal_monkey/src/models/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class MyOrders extends StatefulWidget {

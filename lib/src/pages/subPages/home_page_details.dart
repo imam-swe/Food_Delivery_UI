@@ -1,9 +1,9 @@
 import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/Screens/widgets/home/heading_restaurants.dart';
-import 'package:ecommerce_meal_monkey/Screens/widgets/home/resturant_or_item_category_list.dart';
-import '../widgets/home/current_location_botton.dart';
+import 'package:ecommerce_meal_monkey/src/widgets/heading_restaurants.dart';
+import 'package:ecommerce_meal_monkey/src/widgets/resturant_or_item_category_list.dart';
+import '../../widgets/current_location_botton.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class HomePage extends StatelessWidget {
