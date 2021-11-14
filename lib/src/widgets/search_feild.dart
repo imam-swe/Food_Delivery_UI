@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of widgets;
 
 class Search extends StatelessWidget {
   const Search({Key? key}) : super(key: key);

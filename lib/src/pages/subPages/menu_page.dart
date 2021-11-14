@@ -1,8 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subPages/desserts_page.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+// ignore_for_file: avoid_print
+
+part of pages;
 
 class MenuHome extends StatefulWidget {
   const MenuHome({Key? key}) : super(key: key);
@@ -24,7 +22,6 @@ class _MenuHomeState extends State<MenuHome> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: mainColor,

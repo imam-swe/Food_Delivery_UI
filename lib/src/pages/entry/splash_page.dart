@@ -39,15 +39,3 @@ class _SplashPageState extends State<SplashPage> {
     );
   }
 }
-
-    
-      // body: Container(
-      //   // ignore: prefer_const_constructors
-      //   decoration: BoxDecoration(
-      //     image: const DecorationImage(
-      //       image: AssetImage('assets/splash_background1.png'),
-      //       fit: BoxFit.fill,
-      //     ),
-      //   ),
-      // ),
-

@@ -4,10 +4,9 @@
 class PopularsList {
   String? imagePath;
   String? name;
-  //String? label;
+  String? label;
   String? rating;
   String? ratingCount;
-  String? label;
 
   PopularsList(
       {this.imagePath, this.name, this.rating, this.ratingCount, this.label});
@@ -44,7 +43,6 @@ class PopularsList {
 class MostPopularsList {
   String? imagePath;
   String? name;
-  //String? label;
   String? rating;
   String? ratingCount;
   String? type;

@@ -36,9 +36,6 @@ class LoginPage extends StatelessWidget {
               SizedBox(height: kVerticalPadding),
               ElevatedButton(
                 onPressed: () {
-                  //checkout
-
-                  //Navigator.pushNamed(context, kRouteCheckout);
                   Navigator.of(context).push(
                     MaterialPageRoute(
                       builder: (context) => const MainPage(),

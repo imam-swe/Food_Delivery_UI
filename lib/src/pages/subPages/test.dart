@@ -1,11 +1,6 @@
 // ignore_for_file: avoid_print, unused_local_variable, prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subPages/desserts_page.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
-//import 'package:shape_of_view/shape_of_view.dart';
+part of pages;
 
 class TestMenu extends StatefulWidget {
   const TestMenu({Key? key}) : super(key: key);

@@ -1,11 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/more_about_us_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/more_inbox_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/more_myorder_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/more_notification_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/more_payment_details.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+part of pages;
 
 class MorePage extends StatefulWidget {
   const MorePage({Key? key}) : super(key: key);
@@ -41,7 +34,7 @@ class _MorePageState extends State<MorePage> {
       return const Notifications();
     } else if (inbox == true) {
       menuMore = true;
-      return Inbox();
+      return const Inbox();
     } else if (aboutUs == true) {
       menuMore = true;
       return const AboutUs();

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+// ignore_for_file: must_be_immutable
+part of widgets;
 
 class HeadingRestaurants extends StatelessWidget {
   String? heading;

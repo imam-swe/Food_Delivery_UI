@@ -1,10 +1,5 @@
 // ignore_for_file: file_names, prefer_const_constructors
-
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ecommerce_meal_monkey/src/models/category_model.dart';
-import 'package:ecommerce_meal_monkey/src/models/RestaurantsList.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+part of widgets;
 
 class HomeCategoryList extends StatelessWidget {
   const HomeCategoryList({Key? key}) : super(key: key);

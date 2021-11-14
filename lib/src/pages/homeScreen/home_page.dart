@@ -1,12 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/home_page_details.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/menu_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/more_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/offers_page.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/profile_page.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
-import 'package:ecommerce_meal_monkey/src/models/main_menu_model.dart';
+part of pages;
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);

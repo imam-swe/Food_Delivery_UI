@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+part of widgets;
 
 class CurrentLocationButton extends StatelessWidget {
   const CurrentLocationButton({Key? key}) : super(key: key);

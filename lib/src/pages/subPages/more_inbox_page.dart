@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
-import 'package:ecommerce_meal_monkey/src/models/inbox_list_model.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+part of pages;
 
 class Inbox extends StatelessWidget {
   const Inbox({Key? key}) : super(key: key);

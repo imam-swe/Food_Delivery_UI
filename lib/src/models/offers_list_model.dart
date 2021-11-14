@@ -1,5 +1,3 @@
-
-
 class OffersList {
   String? imagePath;
   String? name;

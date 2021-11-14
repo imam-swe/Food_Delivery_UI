@@ -1,7 +1,4 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+part of pages;
 
 class Detail extends StatefulWidget {
   const Detail({Key? key}) : super(key: key);
@@ -12,7 +9,10 @@ class Detail extends StatefulWidget {
 
 class _DetailState extends State<Detail> {
   int quantity = 0;
+
+  // ignore: prefer_typing_uninitialized_variables
   var _value;
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -433,8 +433,7 @@ class _DetailState extends State<Detail> {
                                                   const EdgeInsets.symmetric(
                                                       horizontal: 20)),
                                           onPressed: () {
-                                            print(
-                                                "Ok>>>>>>>>>>>>>>>Add To cart");
+                                            //print("Ok>>>>>>>>>>>>>>>Add To cart");
                                           },
                                           child: Row(
                                             mainAxisAlignment:
@@ -482,7 +481,7 @@ class _DetailState extends State<Detail> {
                                 ),
                                 child: IconButton(
                                   onPressed: () {
-                                    print("Ok>>>>>>>>>>>>>>>cart");
+                                    //print("Ok>>>>>>>>>>>>>>>cart");
                                   },
                                   icon: const Icon(
                                     FontAwesomeIcons.shoppingCart,

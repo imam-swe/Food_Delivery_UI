@@ -1,9 +1,4 @@
-import 'package:ecommerce_meal_monkey/src/pages/pages.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+part of pages;
 
 class MyOrders extends StatefulWidget {
   const MyOrders({Key? key}) : super(key: key);

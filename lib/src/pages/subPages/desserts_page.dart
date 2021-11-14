@@ -1,10 +1,5 @@
-import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:ecommerce_meal_monkey/src/pages/subpages/detail_food_page.dart';
-import 'package:ecommerce_meal_monkey/src/models/desserts_list_model.dart';
-
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+// ignore_for_file: avoid_print
+part of pages;
 
 class Desserts extends StatefulWidget {
   const Desserts({Key? key}) : super(key: key);

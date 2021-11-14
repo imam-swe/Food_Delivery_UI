@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:ecommerce_meal_monkey/src/models/offers_list_model.dart';
-import 'package:ecommerce_meal_monkey/styles/styles.dart';
+part of pages;
 
 class Offers extends StatelessWidget {
   const Offers({Key? key}) : super(key: key);
