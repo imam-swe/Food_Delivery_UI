@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
@@ -52,105 +50,87 @@ class ProfilePage extends StatelessWidget {
                 ),
               ],
             ),
-            Text(
+            const Text(
               "Hi there Emilla!",
               style: TextStyle(color: primaryFontColor, fontSize: 20),
             ),
-            Text(
+            const Text(
               "Sign Out",
               style: TextStyle(color: placeholderColor, fontSize: 10),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                   labelText: 'Name',
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(22), // Added this
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                   labelText: 'Email',
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(22), // Added this
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-              child: TextField(
+              child: const TextField(
                 keyboardType: TextInputType.phone,
                 decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                   labelText: 'Mobile No',
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(22), // Added this
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                   labelText: 'Address',
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(22), // Added this
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                   labelText: 'password',
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(22), // Added this
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-              child: TextField(
+              child: const TextField(
                 decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                   labelText: 'confirm password',
                   isDense: true, // Added this
                   contentPadding: EdgeInsets.all(22), // Added this

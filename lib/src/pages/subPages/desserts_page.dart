@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, file_names
-
 import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

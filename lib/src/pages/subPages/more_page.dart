@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, unused_local_variable, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/subpages/more_about_us_page.dart';
@@ -34,22 +32,22 @@ class _MorePageState extends State<MorePage> {
       return moreMenu(context);
     } else if (payment == true) {
       menuMore = true;
-      return PaymentDetail();
+      return const PaymentDetail();
     } else if (myOrder == true) {
       menuMore = true;
-      return MyOrders();
+      return const MyOrders();
     } else if (notification == true) {
       menuMore = true;
-      return Notifications();
+      return const Notifications();
     } else if (inbox == true) {
       menuMore = true;
       return Inbox();
     } else if (aboutUs == true) {
       menuMore = true;
-      return AboutUs();
+      return const AboutUs();
     } else {
       menuMore = true;
-      return PaymentDetail();
+      return const PaymentDetail();
     }
   }
 
@@ -59,8 +57,8 @@ class _MorePageState extends State<MorePage> {
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: mainColor,
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
+        title: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             "More",
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
@@ -70,7 +68,8 @@ class _MorePageState extends State<MorePage> {
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: IconButton(
-                onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.shoppingCart)),
           )
         ],
       ),
@@ -86,7 +85,7 @@ class _MorePageState extends State<MorePage> {
               flex: 1,
               child: InkWell(
                 onTap: () {
-                  print("okkkk>>>>>");
+                  // print("okkkk>>>>>");
                   setState(() {
                     menuMore = false;
                     payment = true;
@@ -100,7 +99,7 @@ class _MorePageState extends State<MorePage> {
                 child: _buildButtonCustom(
                     size,
                     context,
-                    Icon(
+                    const Icon(
                       FontAwesomeIcons.fileInvoiceDollar,
                       color: primaryFontColor,
                     ),
@@ -111,7 +110,7 @@ class _MorePageState extends State<MorePage> {
               flex: 1,
               child: InkWell(
                 onTap: () {
-                  print("okkkk>>>>>");
+                  // print("okkkk>>>>>");
                   setState(() {
                     menuMore = false;
                     payment = false;
@@ -124,7 +123,7 @@ class _MorePageState extends State<MorePage> {
                 child: _buildButtonCustom(
                     size,
                     context,
-                    Icon(
+                    const Icon(
                       FontAwesomeIcons.shoppingBag,
                       color: primaryFontColor,
                     ),
@@ -147,7 +146,7 @@ class _MorePageState extends State<MorePage> {
                 child: _buildButtonCustom(
                     size,
                     context,
-                    Icon(
+                    const Icon(
                       FontAwesomeIcons.bell,
                       color: primaryFontColor,
                     ),
@@ -170,7 +169,7 @@ class _MorePageState extends State<MorePage> {
                 child: _buildButtonCustom(
                     size,
                     context,
-                    Icon(
+                    const Icon(
                       Icons.email,
                       color: primaryFontColor,
                     ),
@@ -193,7 +192,7 @@ class _MorePageState extends State<MorePage> {
                 child: _buildButtonCustom(
                     size,
                     context,
-                    Icon(
+                    const Icon(
                       FontAwesomeIcons.info,
                       color: primaryFontColor,
                     ),
@@ -212,7 +211,6 @@ class _MorePageState extends State<MorePage> {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return checkState(context);
   }
 
@@ -234,7 +232,7 @@ class _MorePageState extends State<MorePage> {
                   color: Colors.grey.withOpacity(0.5),
                   spreadRadius: 0,
                   blurRadius: 0,
-                  offset: Offset(3, 6), // changes position of shadow
+                  offset: const Offset(3, 6), // changes position of shadow
                 ),
               ],
             ),
@@ -254,17 +252,13 @@ class _MorePageState extends State<MorePage> {
                           color: placeholderColor.withOpacity(0.5),
                           spreadRadius: 0,
                           blurRadius: 100,
-                          offset: Offset(0, 4), // changes position of shadow
+                          offset:
+                              const Offset(0, 4), // changes position of shadow
                         ),
                       ],
                     ),
                     child: IconButton(
-                      onPressed: () {
-                        //print("Ok>>>>>>>>>>>>>>>cart");
-//                                if(level.toString()=='3'){
-//                                  print("Desserts >>>>>>>>>>>>>>>>>>>>>>>>");
-//                                }
-                      },
+                      onPressed: () {},
                       icon: FittedBox(
                         fit: BoxFit.cover,
                         child: _icon,
@@ -304,18 +298,13 @@ class _MorePageState extends State<MorePage> {
                     color: placeholderColor.withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 2,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
               ),
               child: IconButton(
-                onPressed: () {
-//                  print("Ok>>>>>>>>>>>>>>>cart");
-//                                if(level.toString()=='3'){
-//                                  print("Desserts >>>>>>>>>>>>>>>>>>>>>>>>");
-//                                }
-                },
-                icon: FittedBox(
+                onPressed: () {},
+                icon: const FittedBox(
                   fit: BoxFit.cover,
                   child: Icon(
                     Icons.navigate_next,

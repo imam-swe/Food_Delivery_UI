@@ -1,13 +1,12 @@
-// ignore_for_file: unused_import, avoid_print, use_key_in_widget_constructors, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
 import 'package:ecommerce_meal_monkey/src/models/inbox_list_model.dart';
-import 'package:ecommerce_meal_monkey/src/models/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class Inbox extends StatelessWidget {
+  const Inbox({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,16 +16,16 @@ class Inbox extends StatelessWidget {
           onTap: () {
             /* Write listener code here */
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MainPage()),
+                MaterialPageRoute(builder: (context) => const MainPage()),
                 (Route<dynamic> route) => false);
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_ios,
             color: primaryFontColor, // add custom icons also
           ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
+        title: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             "Inbox",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -36,13 +35,14 @@ class Inbox extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.shoppingCart)),
           )
         ],
       ),
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           _notificationsListView(),
@@ -59,7 +59,7 @@ class Inbox extends StatelessWidget {
         );
       },
       //padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: InboxListModel.list.length,
@@ -70,7 +70,7 @@ class Inbox extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                print("OK>>>>>>>>>>>>>>>>");
+                // print("OK>>>>>>>>>>>>>>>>");
               },
               child: Container(
                 alignment: Alignment.center,
@@ -86,7 +86,7 @@ class Inbox extends StatelessWidget {
                       flex: 4,
                       child: ListTile(
                         onTap: () {},
-                        leading: Icon(
+                        leading: const Icon(
                           FontAwesomeIcons.solidDotCircle,
                           color: Colors.pink,
                           size: 10,
@@ -97,7 +97,7 @@ class Inbox extends StatelessWidget {
                         subtitle: Text(
                           data.notice!.toString(),
                           maxLines: 2,
-                          style: TextStyle(),
+                          style: const TextStyle(),
                         ),
                         //trailing: Icon(FontAwesomeIcons.solidDotCircle,color: Colors.pink,size: 10,),
                       ),
@@ -110,9 +110,9 @@ class Inbox extends StatelessWidget {
                         children: [
                           Text(
                             data.time!.toString(),
-                            style: TextStyle(fontSize: 8),
+                            style: const TextStyle(fontSize: 8),
                           ),
-                          Icon(
+                          const Icon(
                             Icons.star_border,
                             color: mainColor,
                           ),

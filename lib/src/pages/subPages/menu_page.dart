@@ -1,10 +1,7 @@
-// ignore_for_file: avoid_print, unused_import, unused_local_variable
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
 import 'package:ecommerce_meal_monkey/src/pages/subPages/desserts_page.dart';
-import 'package:ecommerce_meal_monkey/src/widgets/search_feild.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class MenuHome extends StatefulWidget {
@@ -44,8 +41,8 @@ class _MenuHomeState extends State<MenuHome> {
           ),
         ),
         title: Padding(
-            padding: const EdgeInsets.all(
-                8.0), //condition == true ? new Container() : new Container()
+            padding: const EdgeInsets.all(8.0),
+            //condition == true ? new Container() : new Container()
             child: state == true
                 ? const Text(
                     "Menu",

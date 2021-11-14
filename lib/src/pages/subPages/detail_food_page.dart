@@ -1,5 +1,3 @@
-// ignore_for_file: file_names, avoid_print, prefer_typing_uninitialized_variables
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
@@ -202,13 +200,6 @@ class _DetailState extends State<Detail> {
                         height: 30,
                         width: MediaQuery.of(context).size.width,
                         color: Colors.black12,
-//                    decoration: ShapeDecoration(
-//                      color: placeholderColor,
-//                      shape: RoundedRectangleBorder(
-//                        side: BorderSide(width: 1.0, style: BorderStyle.solid),
-//                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-//                      ),
-//                    ),
                         padding: const EdgeInsets.symmetric(horizontal: 20),
                         child: DropdownButton(
                             //itemHeight: 100,
@@ -507,14 +498,6 @@ class _DetailState extends State<Detail> {
                     ),
                   ),
                 ),
-//                Align(
-//                  alignment: Alignment.bottomCenter,
-//                  child: Container(
-//                    height: MediaQuery.of(context).size.height*.2,
-//                    width: MediaQuery.of(context).size.width*.5,
-//                    color: placeholderColor,
-//                  ),
-//                )
               ],
             ),
           ),

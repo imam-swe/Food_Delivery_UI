@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -25,7 +23,8 @@ class Offers extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.shoppingCart)),
           )
         ],
       ),
@@ -33,14 +32,15 @@ class Offers extends StatelessWidget {
         children: [
           Padding(
               padding: EdgeInsets.symmetric(horizontal: kHorizontalPadding),
-              child: Text("Find discounts,Offers special\nmeals and more!")),
+              child:
+                  const Text("Find discounts,Offers special\nmeals and more!")),
           Padding(
-            padding: EdgeInsets.only(top: 20, left: 10, right: 175),
+            padding: const EdgeInsets.only(top: 20, left: 10, right: 175),
             child: Container(
               decoration: BoxDecoration(
                   color: mainColor, borderRadius: BorderRadius.circular(50)),
               height: 30,
-              child: Center(
+              child: const Center(
                   child: Text(
                 "Check Offers",
                 style: TextStyle(color: Colors.white),
@@ -57,7 +57,7 @@ class Offers extends StatelessWidget {
               );
             },
             //padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             scrollDirection: Axis.vertical,
             shrinkWrap: true,
             itemCount: OffersList.list.length,
@@ -85,7 +85,7 @@ class Offers extends StatelessWidget {
                         ),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.star,
                               color: mainColor,
                               size: 15,
@@ -94,18 +94,18 @@ class Offers extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 2),
                               child: Text(
                                 data.rating.toString(),
-                                style: TextStyle(color: mainColor),
+                                style: const TextStyle(color: mainColor),
                               ),
                             ),
                             Padding(
                               padding: const EdgeInsets.only(left: 0, right: 2),
                               child: Text(
                                 data.ratingCount.toString(),
-                                style: TextStyle(color: placeholderColor),
+                                style: const TextStyle(color: placeholderColor),
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.only(left: 2),
+                            const Padding(
+                              padding: EdgeInsets.only(left: 2),
                               child: Text(
                                 ".",
                                 style: TextStyle(
@@ -118,7 +118,7 @@ class Offers extends StatelessWidget {
                               padding: const EdgeInsets.only(left: 2, right: 2),
                               child: Text(
                                 data.label.toString(),
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color: placeholderColor,
                                     fontWeight: FontWeight.bold),
                               ),

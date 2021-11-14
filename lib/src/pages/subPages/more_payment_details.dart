@@ -1,11 +1,8 @@
-// ignore_for_file: avoid_print, prefer_const_constructors
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
-// import 'package:ecommerce_meal_monkey/styles/dimenssions.dart';
 import 'package:flutter/widgets.dart';
 
 class PaymentDetail extends StatefulWidget {
@@ -29,16 +26,16 @@ class _PaymentDetailState extends State<PaymentDetail> {
           onTap: () {
             /* Write listener code here */
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MainPage()),
+                MaterialPageRoute(builder: (context) => const MainPage()),
                 (Route<dynamic> route) => false);
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_ios,
             color: primaryFontColor, // add custom icons also
           ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
+        title: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             "Payment Details",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -48,7 +45,8 @@ class _PaymentDetailState extends State<PaymentDetail> {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.shoppingCart)),
           )
         ],
       ),
@@ -95,7 +93,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                     color: Colors.black12.withOpacity(0.5),
                     spreadRadius: 2,
                     blurRadius: 50,
-                    offset: Offset(0, 25), // changes position of shadow
+                    offset: const Offset(0, 25), // changes position of shadow
                   ),
                 ],
               ),
@@ -125,7 +123,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                                       ),
                                 ),
                               ),
-                              FittedBox(
+                              const FittedBox(
                                 fit: BoxFit.fitWidth,
                                 child: Icon(
                                   FontAwesomeIcons.check,
@@ -162,7 +160,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                               fit: BoxFit.fill,
                             ),
                           ),
-                          FittedBox(
+                          const FittedBox(
                             fit: BoxFit.fitWidth,
                             child: Text("**** **** **** 3241"),
                           ),
@@ -173,7 +171,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(50),
                                 border: Border.all(color: mainColor)),
-                            child: FittedBox(
+                            child: const FittedBox(
                               fit: BoxFit.fitWidth,
                               child: Text(
                                 "Delete Card",
@@ -316,9 +314,6 @@ class _PaymentDetailState extends State<PaymentDetail> {
                 TextField(
                   onChanged: (value) {},
                   decoration: const InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                     labelText: 'Card Number',
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(22), // Added this
@@ -336,9 +331,6 @@ class _PaymentDetailState extends State<PaymentDetail> {
                       child: TextField(
                         onChanged: (value) {},
                         decoration: const InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
                           labelText: 'MM',
                           isDense: true, // Added this
                           contentPadding: EdgeInsets.all(22), // Added this
@@ -349,10 +341,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                       width: 100,
                       child: TextField(
                         onChanged: (value) {},
-                        decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
+                        decoration: const InputDecoration(
                           labelText: 'YY',
                           isDense: true, // Added this
                           contentPadding: EdgeInsets.all(22), // Added this
@@ -363,10 +352,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                 ),
                 TextField(
                   onChanged: (value) {},
-                  decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
+                  decoration: const InputDecoration(
                     labelText: 'Sequrity Code',
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(22), // Added this
@@ -374,10 +360,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                 ),
                 TextField(
                   onChanged: (value) {},
-                  decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
+                  decoration: const InputDecoration(
                     labelText: 'First Name',
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(22), // Added this
@@ -385,10 +368,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                 ),
                 TextField(
                   onChanged: (value) {},
-                  decoration: InputDecoration(
-//                  border: OutlineInputBorder(
-//                    borderRadius: BorderRadius.circular(50)
-//                  ),
+                  decoration: const InputDecoration(
                     labelText: 'Last Name',
                     isDense: true, // Added this
                     contentPadding: EdgeInsets.all(22), // Added this
@@ -413,7 +393,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                       onChanged: (value) {
                         setState(() {
                           isSwitched = value;
-                          print(isSwitched);
+                          // print(isSwitched);
                         });
                       },
                       activeTrackColor: Colors.yellow,
@@ -422,13 +402,6 @@ class _PaymentDetailState extends State<PaymentDetail> {
                   ],
                 ),
                 ElevatedButton(
-//                  style: ElevatedButton.styleFrom(
-//                    shape: RoundedRectangleBorder(
-//                      borderRadius: BorderRadius.circular(50),
-//                    ),
-//                    padding: EdgeInsets.symmetric(horizontal: 10),
-//                    //minimumSize: Size(5, 5),
-//                  ),
                   onPressed: () {
                     _showModalBottomSheet(size.height * .7, context);
                   },
@@ -437,7 +410,7 @@ class _PaymentDetailState extends State<PaymentDetail> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        FittedBox(
+                        const FittedBox(
                           fit: BoxFit.fitWidth,
                           child: Icon(
                             FontAwesomeIcons.plus,

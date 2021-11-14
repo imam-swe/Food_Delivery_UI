@@ -1,5 +1,3 @@
-// ignore_for_file: prefer_const_constructors, avoid_print
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
@@ -18,7 +16,7 @@ class Notifications extends StatelessWidget {
           onTap: () {
             /* Write listener code here */
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MainPage()),
+                MaterialPageRoute(builder: (context) => const MainPage()),
                 (Route<dynamic> route) => false);
           },
           child: const Icon(
@@ -26,8 +24,8 @@ class Notifications extends StatelessWidget {
             color: primaryFontColor, // add custom icons also
           ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
+        title: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             "Notifications",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -37,13 +35,14 @@ class Notifications extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.shoppingCart)),
           )
         ],
       ),
       body: ListView(
         children: [
-          SizedBox(
+          const SizedBox(
             height: 30,
           ),
           _notificationsListView(),
@@ -60,7 +59,7 @@ class Notifications extends StatelessWidget {
         );
       },
       //padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: NotificationsList.list.length,
@@ -71,7 +70,7 @@ class Notifications extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                print("OK>>>>>>>>>>>>>>>>>>>>");
+                // print("OK>>>>>>>>>>>>>>>>>>>>");
               },
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
@@ -84,7 +83,7 @@ class Notifications extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Expanded(
+                      const Expanded(
                         flex: 1,
                         child: Icon(
                           FontAwesomeIcons.solidDotCircle,

@@ -1,5 +1,3 @@
-// ignore_for_file: avoid_print, file_names, prefer_const_constructors, duplicate_ignore
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
@@ -18,16 +16,16 @@ class AboutUs extends StatelessWidget {
           onTap: () {
             /* Write listener code here */
             Navigator.of(context).pushAndRemoveUntil(
-                MaterialPageRoute(builder: (context) => MainPage()),
+                MaterialPageRoute(builder: (context) => const MainPage()),
                 (Route<dynamic> route) => false);
           },
-          child: Icon(
+          child: const Icon(
             Icons.arrow_back_ios,
             color: primaryFontColor, // add custom icons also
           ),
         ),
-        title: Padding(
-          padding: const EdgeInsets.all(8.0),
+        title: const Padding(
+          padding: EdgeInsets.all(8.0),
           child: Text(
             "About Us",
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -37,7 +35,8 @@ class AboutUs extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(right: 15.0),
             child: IconButton(
-                onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                onPressed: () {},
+                icon: const Icon(FontAwesomeIcons.shoppingCart)),
           )
         ],
       ),
@@ -61,7 +60,7 @@ class AboutUs extends StatelessWidget {
         );
       },
       //padding: EdgeInsets.symmetric(horizontal: kScaffoldPadding),
-      physics: BouncingScrollPhysics(),
+      physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       itemCount: NotificationsList.list.length - 4,
@@ -72,7 +71,7 @@ class AboutUs extends StatelessWidget {
           children: [
             InkWell(
               onTap: () {
-                print("OK>>>>>>>>>>>>>>>>>>>>");
+                // print("OK>>>>>>>>>>>>>>>>>>>>");
               },
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
@@ -83,7 +82,7 @@ class AboutUs extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(
+                      const Expanded(
                         flex: 1,
                         child: Icon(
                           FontAwesomeIcons.solidDotCircle,

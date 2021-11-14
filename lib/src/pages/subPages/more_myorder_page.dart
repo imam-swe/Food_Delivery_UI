@@ -1,12 +1,8 @@
-// ignore_for_file: unused_import, unused_local_variable, prefer_const_constructors
-
 import 'package:ecommerce_meal_monkey/src/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:ecommerce_meal_monkey/src/pages/homeScreen/home_page.dart';
-import 'package:ecommerce_meal_monkey/src/models/inbox_list_model.dart';
-import 'package:ecommerce_meal_monkey/src/models/notifications_list_model.dart';
 import 'package:ecommerce_meal_monkey/styles/styles.dart';
 
 class MyOrders extends StatefulWidget {
@@ -22,13 +18,12 @@ class _MyOrdersState extends State<MyOrders> {
     if (_state == true) {
       return myOrder();
     } else {
-      return CheckoutPage();
+      return const CheckoutPage();
     }
   }
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.of(context).size;
     return checkState();
   }
 
@@ -41,16 +36,16 @@ class _MyOrdersState extends State<MyOrders> {
             onTap: () {
               /* Write listener code here */
               Navigator.of(context).pushAndRemoveUntil(
-                  MaterialPageRoute(builder: (context) => MainPage()),
+                  MaterialPageRoute(builder: (context) => const MainPage()),
                   (Route<dynamic> route) => false);
             },
-            child: Icon(
+            child: const Icon(
               Icons.arrow_back_ios,
               color: primaryFontColor, // add custom icons also
             ),
           ),
-          title: Padding(
-            padding: const EdgeInsets.all(8.0),
+          title: const Padding(
+            padding: EdgeInsets.all(8.0),
             child: Text(
               "My Order",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -60,7 +55,8 @@ class _MyOrdersState extends State<MyOrders> {
             Padding(
               padding: const EdgeInsets.only(right: 15.0),
               child: IconButton(
-                  onPressed: () {}, icon: Icon(FontAwesomeIcons.shoppingCart)),
+                  onPressed: () {},
+                  icon: const Icon(FontAwesomeIcons.shoppingCart)),
             )
           ],
         ),
@@ -81,7 +77,7 @@ class _MyOrdersState extends State<MyOrders> {
                         width: 250.w,
                         height: 250.h,
                         decoration: BoxDecoration(
-                            image: DecorationImage(
+                            image: const DecorationImage(
                                 image: AssetImage("images/burger.png"),
                                 fit: BoxFit.cover),
                             borderRadius: BorderRadius.circular(12),
